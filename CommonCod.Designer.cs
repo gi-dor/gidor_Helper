@@ -152,6 +152,7 @@
             this.CodeManageButton.TabIndex = 4;
             this.CodeManageButton.Text = "전체 조회";
             this.CodeManageButton.UseVisualStyleBackColor = true;
+            this.CodeManageButton.Click += new System.EventHandler(this.CodeManageButton_Click);
             // 
             // count_value
             // 
@@ -383,6 +384,7 @@
             this.Controls.Add(this.cod_dataGridView1);
             this.Name = "CommonCod";
             this.Text = "CommonCod";
+            this.Load += new System.EventHandler(this.CommonCod_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cod_dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
