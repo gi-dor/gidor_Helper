@@ -56,7 +56,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.common_cod2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -76,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.common_cod2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,6 +180,7 @@
             this.system_user.Name = "system_user";
             this.system_user.Size = new System.Drawing.Size(182, 34);
             this.system_user.TabIndex = 3;
+            this.system_user.Click += new System.EventHandler(this.systemUserClick);
             this.system_user.MouseLeave += new System.EventHandler(this.system_user_Pannel_Leave);
             this.system_user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pannel_move);
             // 
@@ -259,7 +260,7 @@
             // 
             // common_cod
             // 
-            this.common_cod.Controls.Add(this.pictureBox2);
+            this.common_cod.Controls.Add(this.common_cod2);
             this.common_cod.Controls.Add(this.label6);
             this.common_cod.Location = new System.Drawing.Point(113, 3);
             this.common_cod.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
@@ -362,6 +363,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 1;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.systemUserClick2);
             this.pictureBox13.MouseLeave += new System.EventHandler(this.system_user_Pic_Leave);
             this.pictureBox13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pic_Move);
             // 
@@ -405,18 +407,19 @@
             this.pictureBox7.MouseLeave += new System.EventHandler(this.new_404user_Pic_leave);
             this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pic_move);
             // 
-            // pictureBox2
+            // common_cod2
             // 
-            this.pictureBox2.Image = global::gidor_Helper.Properties.Resources.folder;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 71);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.commonCod_Pic_Leave);
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_Pic_Move);
+            this.common_cod2.Image = global::gidor_Helper.Properties.Resources.folder;
+            this.common_cod2.Location = new System.Drawing.Point(11, 2);
+            this.common_cod2.Margin = new System.Windows.Forms.Padding(0);
+            this.common_cod2.Name = "common_cod2";
+            this.common_cod2.Size = new System.Drawing.Size(80, 71);
+            this.common_cod2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.common_cod2.TabIndex = 9;
+            this.common_cod2.TabStop = false;
+            this.common_cod2.Click += new System.EventHandler(this.common_cod2_Click);
+            this.common_cod2.MouseLeave += new System.EventHandler(this.commonCod_Pic_Leave);
+            this.common_cod2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_Pic_Move);
             // 
             // pictureBox3
             // 
@@ -467,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.common_cod2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -499,7 +502,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel common_cod;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox common_cod2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel B2B_user;
         private System.Windows.Forms.PictureBox pictureBox3;
