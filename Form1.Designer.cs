@@ -117,6 +117,8 @@
             this.inv.Name = "inv";
             this.inv.Size = new System.Drawing.Size(182, 34);
             this.inv.TabIndex = 8;
+            this.inv.MouseLeave += new System.EventHandler(this.inv_Pannel_Leave);
+            this.inv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Hover);
             // 
             // pictureBox4
             // 
@@ -128,6 +130,8 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.inv_Pic_Leave);
+            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Hover);
             // 
             // label15
             // 
@@ -147,6 +151,8 @@
             this.b2b_user_system.Name = "b2b_user_system";
             this.b2b_user_system.Size = new System.Drawing.Size(182, 34);
             this.b2b_user_system.TabIndex = 4;
+            this.b2b_user_system.MouseLeave += new System.EventHandler(this.b2b_user_system_Pannel_Leave);
+            this.b2b_user_system.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b2b_user_system_Pannel_Move);
             // 
             // pictureBox5
             // 
@@ -158,6 +164,8 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.b2b_user_system_Pic_Leave);
+            this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b2b_user_system_Pic_Move);
             // 
             // label2
             // 
@@ -177,6 +185,8 @@
             this.scan_data.Name = "scan_data";
             this.scan_data.Size = new System.Drawing.Size(182, 34);
             this.scan_data.TabIndex = 7;
+            this.scan_data.MouseLeave += new System.EventHandler(this.scan_data_Pannel_leave);
+            this.scan_data.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scan_data_Pannel_move);
             // 
             // pictureBox6
             // 
@@ -188,6 +198,8 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.scan_data_Pic_leave);
+            this.pictureBox6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scan_data_Pic_move);
             // 
             // label14
             // 
@@ -207,6 +219,8 @@
             this.system_user.Name = "system_user";
             this.system_user.Size = new System.Drawing.Size(182, 34);
             this.system_user.TabIndex = 3;
+            this.system_user.MouseLeave += new System.EventHandler(this.system_user_Pannel_Leave);
+            this.system_user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pannel_move);
             // 
             // label1
             // 
@@ -227,6 +241,8 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 1;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.MouseLeave += new System.EventHandler(this.system_user_Pic_Leave);
+            this.pictureBox13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pic_Move);
             // 
             // new_902user
             // 
@@ -237,6 +253,8 @@
             this.new_902user.Name = "new_902user";
             this.new_902user.Size = new System.Drawing.Size(182, 34);
             this.new_902user.TabIndex = 6;
+            this.new_902user.MouseLeave += new System.EventHandler(this.new_902user_Pannel_leave);
+            this.new_902user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_902user_Pannel_move);
             // 
             // pictureBox8
             // 
@@ -248,6 +266,8 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.MouseLeave += new System.EventHandler(this.new_902user_Pic_leave);
+            this.pictureBox8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_902user_Pic_move);
             // 
             // label13
             // 
@@ -262,11 +282,13 @@
             // 
             this.user_admin.Controls.Add(this.pictureBox1);
             this.user_admin.Controls.Add(this.label5);
-            this.user_admin.Location = new System.Drawing.Point(0, 3);
+            this.user_admin.Location = new System.Drawing.Point(0, 0);
             this.user_admin.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.user_admin.Name = "user_admin";
-            this.user_admin.Size = new System.Drawing.Size(106, 104);
+            this.user_admin.Size = new System.Drawing.Size(106, 111);
             this.user_admin.TabIndex = 16;
+            this.user_admin.MouseLeave += new System.EventHandler(this.user_Pannel_Leave);
+            this.user_admin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pannel_Move);
             // 
             // pictureBox1
             // 
@@ -279,6 +301,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.user_Pic_Leave);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pic_Move);
             // 
             // label5
             // 
@@ -300,6 +324,8 @@
             this.new_404user.Name = "new_404user";
             this.new_404user.Size = new System.Drawing.Size(182, 34);
             this.new_404user.TabIndex = 5;
+            this.new_404user.MouseLeave += new System.EventHandler(this.new_404user_Pannel_leave);
+            this.new_404user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pannel_hover);
             // 
             // pictureBox7
             // 
@@ -311,6 +337,8 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 5;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.new_404user_Pic_leave);
+            this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pic_move);
             // 
             // label12
             // 
@@ -328,8 +356,10 @@
             this.common_cod.Location = new System.Drawing.Point(113, 3);
             this.common_cod.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.common_cod.Name = "common_cod";
-            this.common_cod.Size = new System.Drawing.Size(106, 104);
+            this.common_cod.Size = new System.Drawing.Size(106, 111);
             this.common_cod.TabIndex = 16;
+            this.common_cod.MouseLeave += new System.EventHandler(this.commonCod_pannel_leave);
+            this.common_cod.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_pannel_Move);
             // 
             // pictureBox2
             // 
@@ -341,6 +371,8 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.commonCod_Pic_Leave);
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_Pic_Move);
             // 
             // label6
             // 
@@ -360,8 +392,10 @@
             this.B2B_user.Location = new System.Drawing.Point(225, 3);
             this.B2B_user.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.B2B_user.Name = "B2B_user";
-            this.B2B_user.Size = new System.Drawing.Size(106, 104);
+            this.B2B_user.Size = new System.Drawing.Size(106, 111);
             this.B2B_user.TabIndex = 16;
+            this.B2B_user.MouseLeave += new System.EventHandler(this.B2B_user_Pannel_leave);
+            this.B2B_user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.B2B_user_Pannel_move);
             // 
             // pictureBox3
             // 
@@ -373,6 +407,8 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.B2B_user_Pic_Leave);
+            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.B2B_user_Pic_Move);
             // 
             // label7
             // 
