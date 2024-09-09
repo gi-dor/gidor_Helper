@@ -66,6 +66,7 @@
     <Compile Include="UserDetails.Designer.cs">
       <DependentUpon>UserDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\DB_Connect.cs" />
     <EmbeddedResource Include="CommonCod.resx">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </EmbeddedResource>
