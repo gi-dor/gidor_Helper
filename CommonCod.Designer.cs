@@ -219,6 +219,7 @@
             this.CodeSelectButton.TabIndex = 4;
             this.CodeSelectButton.Text = "코드 조회";
             this.CodeSelectButton.UseVisualStyleBackColor = true;
+            this.CodeSelectButton.Click += new System.EventHandler(this.CodeSelectButton_Click);
             // 
             // textBox2
             // 
