@@ -233,5 +233,30 @@ namespace gidor_Helper
             new_902user.BorderStyle = BorderStyle.FixedSingle;
         }
 
+        // 버튼 Hover 종료 
+
+
+        // 서비스 시작
+
+        private void commonCod_Pannel_Click(object sender, EventArgs e)
+        {
+            CommonCod commonCod = new CommonCod();
+            // 내부에 포함시킨다
+            commonCod.TopLevel = false;
+            // 폼의 테두리를 없앤다 _ CommonCod 폼의 최소하 , 최대화 , 닫기 버튼 때문
+            commonCod.FormBorderStyle = FormBorderStyle.None;
+            // Dock.Fill을 사용하면 컨테이너에 맞게 크기가 가득찬다
+            commonCod.Dock = DockStyle.Fill;
+
+            // Panel에 UserDetailsForm을 추가합니다.
+            // 기존에 존재하는 표시된 컨트롤을 지운다
+            this.mainPage.Controls.Clear(); 
+            
+            // 생성된 commoncod 폼을 mainPage 창에 맞게 추가하요 표시한다
+            this.mainPage.Controls.Add(commonCod);
+            
+            // 폼을 보여주며 TopLevel = false 덕분에 부모폼에서 일부로 표시된다
+            commonCod.Show();
+        }
     }
 }

@@ -31,52 +31,52 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.inv = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.b2b_user_system = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.scan_data = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.system_user = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.new_902user = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.user_admin = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.new_404user = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.common_cod = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.B2B_user = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mainPage = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.inv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.b2b_user_system.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.scan_data.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.system_user.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.new_902user.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.user_admin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.new_404user.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.common_cod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.B2B_user.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1284, 115);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1284, 125);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // panel6
@@ -120,19 +120,6 @@
             this.inv.MouseLeave += new System.EventHandler(this.inv_Pannel_Leave);
             this.inv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Hover);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox4.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.inv_Pic_Leave);
-            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Hover);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -154,19 +141,6 @@
             this.b2b_user_system.MouseLeave += new System.EventHandler(this.b2b_user_system_Pannel_Leave);
             this.b2b_user_system.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b2b_user_system_Pannel_Move);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.MouseLeave += new System.EventHandler(this.b2b_user_system_Pic_Leave);
-            this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b2b_user_system_Pic_Move);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -187,19 +161,6 @@
             this.scan_data.TabIndex = 7;
             this.scan_data.MouseLeave += new System.EventHandler(this.scan_data_Pannel_leave);
             this.scan_data.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scan_data_Pannel_move);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox6.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.scan_data_Pic_leave);
-            this.pictureBox6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scan_data_Pic_move);
             // 
             // label14
             // 
@@ -231,19 +192,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "시스템 계정현황";
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox13.Location = new System.Drawing.Point(0, -3);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 1;
-            this.pictureBox13.TabStop = false;
-            this.pictureBox13.MouseLeave += new System.EventHandler(this.system_user_Pic_Leave);
-            this.pictureBox13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pic_Move);
-            // 
             // new_902user
             // 
             this.new_902user.Controls.Add(this.pictureBox8);
@@ -255,19 +203,6 @@
             this.new_902user.TabIndex = 6;
             this.new_902user.MouseLeave += new System.EventHandler(this.new_902user_Pannel_leave);
             this.new_902user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_902user_Pannel_move);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox8.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 6;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.MouseLeave += new System.EventHandler(this.new_902user_Pic_leave);
-            this.pictureBox8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_902user_Pic_move);
             // 
             // label13
             // 
@@ -289,20 +224,6 @@
             this.user_admin.TabIndex = 16;
             this.user_admin.MouseLeave += new System.EventHandler(this.user_Pannel_Leave);
             this.user_admin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pannel_Move);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = global::gidor_Helper.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.user_Pic_Leave);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pic_Move);
             // 
             // label5
             // 
@@ -327,19 +248,6 @@
             this.new_404user.MouseLeave += new System.EventHandler(this.new_404user_Pannel_leave);
             this.new_404user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pannel_hover);
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::gidor_Helper.Properties.Resources.check;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.MouseLeave += new System.EventHandler(this.new_404user_Pic_leave);
-            this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pic_move);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -358,21 +266,9 @@
             this.common_cod.Name = "common_cod";
             this.common_cod.Size = new System.Drawing.Size(106, 111);
             this.common_cod.TabIndex = 16;
+            this.common_cod.Click += new System.EventHandler(this.commonCod_Pannel_Click);
             this.common_cod.MouseLeave += new System.EventHandler(this.commonCod_pannel_leave);
             this.common_cod.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_pannel_Move);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::gidor_Helper.Properties.Resources.folder;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 71);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.commonCod_Pic_Leave);
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_Pic_Move);
             // 
             // label6
             // 
@@ -397,19 +293,6 @@
             this.B2B_user.MouseLeave += new System.EventHandler(this.B2B_user_Pannel_leave);
             this.B2B_user.MouseMove += new System.Windows.Forms.MouseEventHandler(this.B2B_user_Pannel_move);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::gidor_Helper.Properties.Resources.users;
-            this.pictureBox3.Location = new System.Drawing.Point(16, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 76);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.B2B_user_Pic_Leave);
-            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.B2B_user_Pic_Move);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -425,10 +308,128 @@
             // 
             this.mainPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mainPage.Location = new System.Drawing.Point(1, 121);
+            this.mainPage.Location = new System.Drawing.Point(1, 142);
             this.mainPage.Name = "mainPage";
-            this.mainPage.Size = new System.Drawing.Size(1271, 720);
+            this.mainPage.Size = new System.Drawing.Size(1271, 699);
             this.mainPage.TabIndex = 20;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox4.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.inv_Pic_Leave);
+            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Hover);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.b2b_user_system_Pic_Leave);
+            this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b2b_user_system_Pic_Move);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox6.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.scan_data_Pic_leave);
+            this.pictureBox6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scan_data_Pic_move);
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox13.Location = new System.Drawing.Point(0, -3);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 1;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.MouseLeave += new System.EventHandler(this.system_user_Pic_Leave);
+            this.pictureBox13.MouseMove += new System.Windows.Forms.MouseEventHandler(this.system_user_Pic_Move);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox8.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 6;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.MouseLeave += new System.EventHandler(this.new_902user_Pic_leave);
+            this.pictureBox8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_902user_Pic_move);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = global::gidor_Helper.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.user_Pic_Leave);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pic_Move);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::gidor_Helper.Properties.Resources.check;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 5;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.new_404user_Pic_leave);
+            this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.new_404user_Pic_move);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::gidor_Helper.Properties.Resources.folder;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 71);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.commonCod_Pic_Leave);
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.commonCod_Pic_Move);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::gidor_Helper.Properties.Resources.users;
+            this.pictureBox3.Location = new System.Drawing.Point(16, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(75, 76);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.B2B_user_Pic_Leave);
+            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.B2B_user_Pic_Move);
             // 
             // Form1
             // 
@@ -443,30 +444,30 @@
             this.panel6.ResumeLayout(false);
             this.inv.ResumeLayout(false);
             this.inv.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.b2b_user_system.ResumeLayout(false);
             this.b2b_user_system.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.scan_data.ResumeLayout(false);
             this.scan_data.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.system_user.ResumeLayout(false);
             this.system_user.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.new_902user.ResumeLayout(false);
             this.new_902user.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.user_admin.ResumeLayout(false);
             this.user_admin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.new_404user.ResumeLayout(false);
             this.new_404user.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.common_cod.ResumeLayout(false);
             this.common_cod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.B2B_user.ResumeLayout(false);
             this.B2B_user.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
