@@ -19,6 +19,7 @@ namespace gidor_Helper
             InitializeComponent();
         }
 
+        // 코드관리 페이지 로드시 , DB 연결 성공 유무확인
         private void CommonCod_Load(object sender, EventArgs e)
         {
             try
@@ -43,6 +44,8 @@ namespace gidor_Helper
                 MessageBox.Show($"DB 연결실패 \r\n Error : {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // 전체 조회
 
         private void CodeManageButton_Click(object sender, EventArgs e)
         {
@@ -87,6 +90,8 @@ namespace gidor_Helper
             }
         }
 
+
+        // 특정 조건에 맞게 검색
         private void CodeSelectButton_Click(object sender, EventArgs e)
         {
             try
@@ -94,9 +99,9 @@ namespace gidor_Helper
                 String sqlQuery = " SELECT " +
                                   "     COD_NO, " +
                                   "     COD , " +
-                                  "     COD_CONT    as  코드내용 , " +
-                                  "     COD_SLT     as  코드상태 , " +
-                                  "     CREATED_DATE    as 생성일자 , " +
+                                  "     COD_CONT        , " +
+                                  "     COD_SLT         , " +
+                                  "     CREATED_DATE    , " +
                                   "     END_DATE , " +
                                   "     TRS_ID , " +
                                   "     TRS_NAME , " +
@@ -175,5 +180,39 @@ namespace gidor_Helper
                 MessageBox.Show($"데이터 조회 실패 \r\n Error : {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        // 특정행 클릭시 해당 정보를 하단의 상세 정보 칸에 조회
+        private void Row_Click_Detail(object sender, DataGridViewCellEventArgs e)
+        {
+            // 선택된 행이 1개 이상이라면 실행한다
+            if(e.RowIndex > 0)
+            {
+                // .Rows 컨트롤의 모든 행을 포함하는 컬렉션을 가져온다 ? -> 해당 선택된 행의 컬럼들에 대한 정보를 담는거 같음
+                // .RowIndex 이벤트가 발생한 셀의 행의 인덱스를 가져온다고한다
+                DataGridViewRow row = cod_dataGridView1.Rows[e.RowIndex];
+
+                // DataGridViewTextBoxCell { ColumnIndex=0, Rowndex=1 } 선택한 셀 자체의 객체를 문자열로 가져온다
+                //  cod_textBox.Text = row.Cells[0].ToString();
+                // cod_textBox.Text = row.Cells["COD"].ToString();
+
+                // Value를 사용하여 실제 데이터를 가져오자
+
+                // 특정 컬럼에 대해 명시적으로 "COD" 으로 표현 할수 있으며 INDEX를 통해 설정 할수도 있다
+
+                // String sqlQery 에서 AS 를 사용한다면 컬럼을 명시적으로 표현하지말고 INDEX를 통해 설정해야한다
+                cod_textBox.Text = row.Cells["COD"].Value.ToString();
+                codCont_textBox.Text = row.Cells[2].Value.ToString();
+                creDate_textBox.Text = row.Cells[4].Value.ToString();
+                endDate_textBox.Text = row.Cells["END_DATE"].Value.ToString();
+                codSlt_textBox.Text = row.Cells["COD_SLT"].Value.ToString();
+
+
+            }
+        }
+
+
+
+
     }
 }

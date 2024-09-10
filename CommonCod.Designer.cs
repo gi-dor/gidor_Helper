@@ -89,6 +89,7 @@
             this.cod_dataGridView1.RowTemplate.Height = 23;
             this.cod_dataGridView1.Size = new System.Drawing.Size(963, 478);
             this.cod_dataGridView1.TabIndex = 3;
+            this.cod_dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Row_Click_Detail);
             // 
             // COD_NO
             // 
