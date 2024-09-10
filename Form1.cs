@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gidor_Helper.domain.ScanData;
 
 namespace gidor_Helper
 {
@@ -301,6 +302,17 @@ namespace gidor_Helper
             this.mainPage.Controls.Clear();
             this.mainPage.Controls.Add(userDetails);
             userDetails.Show();
+        }
+
+        private void System_ScanClick(object sender, EventArgs e)
+        {
+            ScanData scanData = new ScanData();
+            scanData.TopLevel = false;
+            scanData.FormBorderStyle = FormBorderStyle.None;
+            scanData.Dock = DockStyle.Fill;
+            this.mainPage.Controls.Clear();
+            this.mainPage.Controls.Add(scanData);
+            scanData.Show();
         }
     }
 }

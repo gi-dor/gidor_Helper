@@ -76,6 +76,9 @@
     <EmbeddedResource Include="domain\CommonCod\CommonCod.resx">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="domain\ScanData\ScanData.resx">
+      <DependentUpon>ScanData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
