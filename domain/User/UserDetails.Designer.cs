@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1258, 104);
+            this.panel1.Size = new System.Drawing.Size(1184, 104);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -142,7 +142,7 @@
             this.user_dataGridView1.RowTemplate.ReadOnly = true;
             this.user_dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.user_dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.user_dataGridView1.Size = new System.Drawing.Size(1233, 161);
+            this.user_dataGridView1.Size = new System.Drawing.Size(1160, 161);
             this.user_dataGridView1.TabIndex = 11;
             this.user_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_Detail);
             // 
@@ -159,7 +159,7 @@
             this.user_dataGridView2.RowTemplate.Height = 23;
             this.user_dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.user_dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.user_dataGridView2.Size = new System.Drawing.Size(1233, 302);
+            this.user_dataGridView2.Size = new System.Drawing.Size(1159, 302);
             this.user_dataGridView2.TabIndex = 12;
             // 
             // DEPARTMENT_NO
@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1258, 611);
+            this.ClientSize = new System.Drawing.Size(1184, 671);
             this.Controls.Add(this.user_dataGridView2);
             this.Controls.Add(this.user_dataGridView1);
             this.Controls.Add(this.panel1);
