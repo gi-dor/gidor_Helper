@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.selectButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.user_dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.user_dataGridView2 = new System.Windows.Forms.DataGridView();
             this.DEPARTMENT_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DEPARTMENT_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DEPARTMENT_COD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UPDATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user_dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_dataGridView2)).BeginInit();
@@ -51,7 +50,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.selectButton);
@@ -62,15 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1258, 104);
             this.panel1.TabIndex = 10;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(921, 33);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(148, 30);
-            this.cancelButton.TabIndex = 7;
-            this.cancelButton.Text = "초기화";
-            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -105,6 +94,7 @@
             this.selectButton.TabIndex = 8;
             this.selectButton.Text = "조회";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // comboBox1
             // 
@@ -154,6 +144,23 @@
             this.user_dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.user_dataGridView1.Size = new System.Drawing.Size(1233, 161);
             this.user_dataGridView1.TabIndex = 11;
+            this.user_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_Detail);
+            // 
+            // user_dataGridView2
+            // 
+            this.user_dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.user_dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.user_dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.user_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.user_dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.user_dataGridView2.Location = new System.Drawing.Point(13, 297);
+            this.user_dataGridView2.Name = "user_dataGridView2";
+            this.user_dataGridView2.ReadOnly = true;
+            this.user_dataGridView2.RowTemplate.Height = 23;
+            this.user_dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.user_dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.user_dataGridView2.Size = new System.Drawing.Size(1233, 302);
+            this.user_dataGridView2.TabIndex = 12;
             // 
             // DEPARTMENT_NO
             // 
@@ -185,22 +192,6 @@
             this.UPDATED_DATE.Name = "UPDATED_DATE";
             this.UPDATED_DATE.ReadOnly = true;
             // 
-            // user_dataGridView2
-            // 
-            this.user_dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.user_dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.user_dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.user_dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.user_dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.user_dataGridView2.Location = new System.Drawing.Point(13, 277);
-            this.user_dataGridView2.Name = "user_dataGridView2";
-            this.user_dataGridView2.ReadOnly = true;
-            this.user_dataGridView2.RowTemplate.Height = 23;
-            this.user_dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.user_dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.user_dataGridView2.Size = new System.Drawing.Size(1233, 284);
-            this.user_dataGridView2.TabIndex = 12;
-            // 
             // UserDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -212,6 +203,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserDetails";
             this.Text = "UserDetails";
+            this.Load += new System.EventHandler(this.UserDeatil_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_dataGridView1)).EndInit();
@@ -223,18 +215,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button selectButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView user_dataGridView1;
+        private System.Windows.Forms.DataGridView user_dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENT_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENT_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENT_COD;
         private System.Windows.Forms.DataGridViewTextBoxColumn CREATED_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn UPDATED_DATE;
-        private System.Windows.Forms.DataGridView user_dataGridView2;
     }
 }
