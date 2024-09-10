@@ -52,6 +52,12 @@
     <Compile Include="domain\CommonCod\CommonCod.Designer.cs">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </Compile>
+    <Compile Include="domain\ScanData\ScanData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="domain\ScanData\ScanData.Designer.cs">
+      <DependentUpon>ScanData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
