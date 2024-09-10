@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonCod.cs">
+    <Compile Include="domain\CommonCod\CommonCod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommonCod.Designer.cs">
+    <Compile Include="domain\CommonCod\CommonCod.Designer.cs">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -60,14 +60,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDetails.cs">
+    <Compile Include="domain\User\UserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDetails.Designer.cs">
+    <Compile Include="domain\User\UserDetails.Designer.cs">
       <DependentUpon>UserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\DB_Connect.cs" />
-    <EmbeddedResource Include="CommonCod.resx">
+    <EmbeddedResource Include="domain\CommonCod\CommonCod.resx">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -83,7 +83,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserDetails.resx">
+    <EmbeddedResource Include="domain\User\UserDetails.resx">
       <DependentUpon>UserDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -115,5 +115,6 @@
     <None Include="Resources\disk.jpg" />
     <None Include="Resources\check.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
