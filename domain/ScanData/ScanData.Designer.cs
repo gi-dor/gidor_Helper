@@ -67,6 +67,8 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count_value = new System.Windows.Forms.Label();
+            this.count = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -176,17 +178,17 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 394);
+            this.panel1.Location = new System.Drawing.Point(12, 407);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 232);
+            this.panel1.Size = new System.Drawing.Size(406, 219);
             this.panel1.TabIndex = 1;
             // 
             // SELECT_ALL_BUTTON
             // 
             this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(1164, 12);
+            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(938, 376);
             this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
-            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(95, 41);
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(105, 28);
             this.SELECT_ALL_BUTTON.TabIndex = 3;
             this.SELECT_ALL_BUTTON.Text = "전체 조회";
             this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
@@ -194,9 +196,9 @@
             // 
             // SELECT_BUTTON
             // 
-            this.SELECT_BUTTON.Location = new System.Drawing.Point(265, 45);
+            this.SELECT_BUTTON.Location = new System.Drawing.Point(278, 8);
             this.SELECT_BUTTON.Name = "SELECT_BUTTON";
-            this.SELECT_BUTTON.Size = new System.Drawing.Size(128, 31);
+            this.SELECT_BUTTON.Size = new System.Drawing.Size(105, 28);
             this.SELECT_BUTTON.TabIndex = 3;
             this.SELECT_BUTTON.Text = "조건 조회";
             this.SELECT_BUTTON.UseVisualStyleBackColor = true;
@@ -286,9 +288,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.DELETE_BUTTON);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(820, 394);
+            this.panel3.Location = new System.Drawing.Point(449, 407);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 232);
+            this.panel3.Size = new System.Drawing.Size(338, 219);
             this.panel3.TabIndex = 2;
             // 
             // DELETE_BUTTON
@@ -398,11 +400,31 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
+            // count_value
+            // 
+            this.count_value.AutoSize = true;
+            this.count_value.Location = new System.Drawing.Point(1014, 420);
+            this.count_value.Name = "count_value";
+            this.count_value.Size = new System.Drawing.Size(61, 12);
+            this.count_value.TabIndex = 11;
+            this.count_value.Text = "              ";
+            // 
+            // count
+            // 
+            this.count.AutoSize = true;
+            this.count.Location = new System.Drawing.Point(936, 420);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(81, 12);
+            this.count.TabIndex = 10;
+            this.count.Text = "조회된 건수 : ";
+            // 
             // ScanData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 712);
+            this.Controls.Add(this.count_value);
+            this.Controls.Add(this.count);
             this.Controls.Add(this.ScanDataGridView2);
             this.Controls.Add(this.SELECT_ALL_BUTTON);
             this.Controls.Add(this.panel3);
@@ -418,6 +440,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -462,5 +485,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Label count_value;
+        private System.Windows.Forms.Label count;
     }
 }

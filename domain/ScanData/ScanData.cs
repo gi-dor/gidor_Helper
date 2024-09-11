@@ -44,7 +44,7 @@ namespace gidor_Helper.domain.ScanData
             {
                 using(SqlConnection conn = new SqlConnection(DB_Connect.conStr))
                 {
-                    String sqlQuery = "SELECT " +
+                    String sqlQuery = "SELECT  " +
                                             "A.INV_NO ,         " +
                                             "A.BRA_ID ,         " +
                                             "B.COD_CONT,       " +
@@ -58,7 +58,7 @@ namespace gidor_Helper.domain.ScanData
                                          " FROM LS101T0 A " +
                                          " INNER JOIN COD B " +
                                          " ON A.SCANN_SLT = B.COD " +
-                                         " ORDER BY A.INV_NO ASC";
+                                         " ORDER BY A.SCANN_DATE DESC";
 
                     // SQL 쿼리를 실행시작 객체
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
@@ -71,12 +71,17 @@ namespace gidor_Helper.domain.ScanData
 
                     dataAdapter.Fill(dataTable);
 
+
                     ScanDataGridView1.Columns.Clear();
+
+                    int rowCount = dataTable.Rows.Count;
+                    count_value.Text = $" {rowCount}";
 
                     ScanDataGridView1.DataSource = dataTable;
 
                     ScanDataGridView1.ReadOnly = true;
                     ScanDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    ScanDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 }
             } catch(Exception ex)
@@ -88,7 +93,7 @@ namespace gidor_Helper.domain.ScanData
 
 
 
-        // 행 클릭시 해당하는 송장번호에 대한 검색
+        // 행 클릭시 해당하는 송장번호에 대한 상세 검색
         private void ScannDetail(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -114,8 +119,7 @@ namespace gidor_Helper.domain.ScanData
                                             " FROM LS101T0 A " +
                                             " INNER JOIN COD B " +
                                             " ON A.SCANN_SLT = B.COD " +
-                                            $" WHERE INV_NO = '{selectColumn}' " +
-                                            " ORDER BY INV_NO DESC ";
+                                            $" WHERE INV_NO = '{selectColumn}' " ;
 
                         SqlCommand sqlCommand = new SqlCommand(sqlQuery, conn);
                         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -130,6 +134,8 @@ namespace gidor_Helper.domain.ScanData
 
                         ScanDataGridView2.ReadOnly = true;
                         ScanDataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        ScanDataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                     }
                 } catch(Exception ex)
                 {
@@ -145,7 +151,82 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
+                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                {
+                    String sqlQuery = "SELECT  " +
+                                            "A.INV_NO ,         " +
+                                            "A.BRA_ID ,         " +
+                                            "B.COD_CONT,       " +
+                                            "A.SCANN_DATE,      " +
+                                            "A.SCANN_TIME,      " +
+                                            "A.CAR_ID  ,        " +
+                                            "A.SCANN_USR_ID  ,  " +
+                                            "A.TRS_ID   ,       " +
+                                            "A.TRS_NAME ,       " +
+                                            "A.TRS_DATE " +
+                                         " FROM LS101T0 A " +
+                                         " INNER JOIN COD B " +
+                                         " ON A.SCANN_SLT = B.COD " +
+                                         " ORDER BY A.SCANN_DATE DESC";
 
+                    List<string> where = new List<string>();
+
+                   
+
+                    if (!String.IsNullOrWhiteSpace(textBox1.Text))
+                    {
+                        where.Add($"INV_NO LIKE '%{textBox1.Text}%'");
+                    }
+
+                    if (!String.IsNullOrWhiteSpace(textBox2.Text))
+                    {
+                        where.Add($"BRA_ID LIKE '%{textBox2.Text}%'");
+                    }
+
+
+
+                    /* 
+                     * 1. textBox3 와 textBox4 값 둘다 입력되었을 때는 Between A And B를 사용한다
+                       2. textBox3 값만 입력 할 때                  
+                       3. textBox4 값만 입력할 때 
+                    */
+
+                    if (!String.IsNullOrWhiteSpace(textBox3.Text) && !String.IsNullOrWhiteSpace(textBox4.Text))
+                    {
+                        where.Add($"SCANN_DATE BETWEEN '{textBox3.Text}' AND '{textBox4.Text}'");
+                    } else if(!String.IsNullOrWhiteSpace(textBox3.Text) )
+                    {
+                        where.Add($"SCANN_DATE LIKE '%{textBox3.Text}%'");
+                    } else if (!String.IsNullOrWhiteSpace(textBox4.Text))
+                    {
+                        where.Add($"SCANN_DATE LIKE '%{textBox4.Text}%'");
+                    }
+
+         
+                   
+
+                    // WHERE 조건이 하나라도 있을 때만 추가
+                    if (where.Count > 0)
+                    {
+                        sqlQuery += " WHERE " + string.Join(" OR ", where);
+                    }
+
+
+
+                    SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    ScanDataGridView1.Columns.Clear();
+
+                    int rowCount = dataTable.Rows.Count;
+                    count_value.Text = $" {rowCount}";
+
+                    ScanDataGridView1.DataSource = dataTable;
+
+                }
             } catch(Exception ex)
             {
                 MessageBox.Show($"데이터 조회 실패 \r\n Error: {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
