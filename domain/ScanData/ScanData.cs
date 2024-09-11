@@ -166,8 +166,7 @@ namespace gidor_Helper.domain.ScanData
                                             "A.TRS_DATE " +
                                          " FROM LS101T0 A " +
                                          " INNER JOIN COD B " +
-                                         " ON A.SCANN_SLT = B.COD " +
-                                         " ORDER BY A.SCANN_DATE DESC";
+                                         " ON A.SCANN_SLT = B.COD " ;
 
                     List<string> where = new List<string>();
 
