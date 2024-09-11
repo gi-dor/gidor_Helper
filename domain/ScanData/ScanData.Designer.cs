@@ -52,16 +52,25 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.UPDATE_BUTTON = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DELETE_BUTTON = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.ScanDataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // ScanDataGridView1
@@ -83,8 +92,9 @@
             this.ScanDataGridView1.Location = new System.Drawing.Point(12, 12);
             this.ScanDataGridView1.Name = "ScanDataGridView1";
             this.ScanDataGridView1.RowTemplate.Height = 23;
-            this.ScanDataGridView1.Size = new System.Drawing.Size(1146, 304);
+            this.ScanDataGridView1.Size = new System.Drawing.Size(1146, 159);
             this.ScanDataGridView1.TabIndex = 0;
+            this.ScanDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ScannDetail);
             // 
             // INV_NO
             // 
@@ -156,7 +166,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.SELECT_ALL_BUTTON);
             this.panel1.Controls.Add(this.SELECT_BUTTON);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -167,29 +176,31 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 336);
+            this.panel1.Location = new System.Drawing.Point(12, 394);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 284);
+            this.panel1.Size = new System.Drawing.Size(407, 232);
             this.panel1.TabIndex = 1;
             // 
             // SELECT_ALL_BUTTON
             // 
-            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(255, 188);
+            this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(1164, 12);
             this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
-            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(147, 33);
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(95, 41);
             this.SELECT_ALL_BUTTON.TabIndex = 3;
-            this.SELECT_ALL_BUTTON.Text = "SELECT_ALL_BUTTON";
+            this.SELECT_ALL_BUTTON.Text = "전체 조회";
             this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
             this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
             // 
             // SELECT_BUTTON
             // 
-            this.SELECT_BUTTON.Location = new System.Drawing.Point(255, 233);
+            this.SELECT_BUTTON.Location = new System.Drawing.Point(265, 45);
             this.SELECT_BUTTON.Name = "SELECT_BUTTON";
             this.SELECT_BUTTON.Size = new System.Drawing.Size(128, 31);
             this.SELECT_BUTTON.TabIndex = 3;
-            this.SELECT_BUTTON.Text = "SELECT_BUTTON";
+            this.SELECT_BUTTON.Text = "조건 조회";
             this.SELECT_BUTTON.UseVisualStyleBackColor = true;
+            this.SELECT_BUTTON.Click += new System.EventHandler(this.SELECT_BUTTON_Click);
             // 
             // label7
             // 
@@ -269,54 +280,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SELECT";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.UPDATE_BUTTON);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(445, 336);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(338, 284);
-            this.panel2.TabIndex = 2;
-            // 
-            // UPDATE_BUTTON
-            // 
-            this.UPDATE_BUTTON.Location = new System.Drawing.Point(197, 244);
-            this.UPDATE_BUTTON.Name = "UPDATE_BUTTON";
-            this.UPDATE_BUTTON.Size = new System.Drawing.Size(136, 34);
-            this.UPDATE_BUTTON.TabIndex = 3;
-            this.UPDATE_BUTTON.Text = "UPDATE_BUTTON";
-            this.UPDATE_BUTTON.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "UPDATE";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.DELETE_BUTTON);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(820, 336);
+            this.panel3.Location = new System.Drawing.Point(820, 394);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 284);
+            this.panel3.Size = new System.Drawing.Size(338, 232);
             this.panel3.TabIndex = 2;
             // 
             // DELETE_BUTTON
             // 
-            this.DELETE_BUTTON.Location = new System.Drawing.Point(209, 244);
+            this.DELETE_BUTTON.Location = new System.Drawing.Point(169, 69);
             this.DELETE_BUTTON.Name = "DELETE_BUTTON";
             this.DELETE_BUTTON.Size = new System.Drawing.Size(124, 35);
             this.DELETE_BUTTON.TabIndex = 3;
-            this.DELETE_BUTTON.Text = "DELETE_BUTTON";
+            this.DELETE_BUTTON.Text = "행 삭제";
             this.DELETE_BUTTON.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -329,13 +310,102 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "DELETE";
             // 
+            // ScanDataGridView2
+            // 
+            this.ScanDataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ScanDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScanDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.ScanDataGridView2.Location = new System.Drawing.Point(12, 197);
+            this.ScanDataGridView2.Name = "ScanDataGridView2";
+            this.ScanDataGridView2.RowTemplate.Height = 23;
+            this.ScanDataGridView2.Size = new System.Drawing.Size(1146, 173);
+            this.ScanDataGridView2.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "INV_NO";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "BRA_ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "SCANN_SLT";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "SCANN_DATE";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "SCANN_TIME";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "CAR_ID";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "SCANN_USR_ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "HTT_ID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "TRS_ID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "TRS_NAME";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "TRS_DATE";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
             // ScanData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 671);
+            this.ClientSize = new System.Drawing.Size(1300, 712);
+            this.Controls.Add(this.ScanDataGridView2);
+            this.Controls.Add(this.SELECT_ALL_BUTTON);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScanDataGridView1);
             this.Name = "ScanData";
@@ -344,10 +414,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,8 +437,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TRS_DATE;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SELECT_BUTTON;
@@ -381,8 +448,19 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button UPDATE_BUTTON;
         private System.Windows.Forms.Button DELETE_BUTTON;
         private System.Windows.Forms.Button SELECT_ALL_BUTTON;
+        private System.Windows.Forms.DataGridView ScanDataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }
