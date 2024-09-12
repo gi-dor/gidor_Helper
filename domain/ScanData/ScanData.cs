@@ -231,5 +231,69 @@ namespace gidor_Helper.domain.ScanData
                 MessageBox.Show($"데이터 조회 실패 \r\n Error: {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        // 스캔 상태 1개 삭제
+        private void DELETE_SELECT_BUTTON_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(ScanDataGridView2.SelectedRows.Count > 0 )
+                {
+
+                }
+                
+
+                ///////////////////////////////////     2024.0912 금요일 작업
+
+
+
+                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                {
+                    conn.Open();
+                    // 선택한 행의 컬럼INV_NO , SCANN_SLT를 인덱스로 설정하지 않고 직접 설정해 값을 가져와 toString()
+                    String INV_NO = ScanDataGridView2.SelectedRows[0].Cells["INV_NO"].Value.ToString();
+                    String SCANN_SLT = ScanDataGridView2.SelectedRows[0].Cells["COD_CONT"].Value.ToString();
+
+                    
+
+                    String sqlQuery = "DELETE FROM LS101T0 " +
+                                        $" WHERE INV_NO = '{INV_NO}' " +
+                                        $" AND SCAN_SLT = '{SCANN_SLT}' ";
+
+
+                    using (SqlCommand sqlCommand = new SqlCommand(sqlQuery, conn))
+                    {
+                        // ExecuteNonQuery() INSERT, UPDATE, DELETE와 같은 데이터 변경 작업에 사용되며. 이 메서드는 데이터베이스에서 변화가 생긴 행의 갯수를 반환
+                        int deleteRow = sqlCommand.ExecuteNonQuery();
+
+                        // 실행된 쿼리 결과 확인
+                        if (deleteRow > 0)
+                        {
+                            MessageBox.Show("행이 성공적으로 삭제되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // 삭제된 행을 DataGridView에서 제거
+                            ScanDataGridView2.Rows.RemoveAt(ScanDataGridView2.SelectedRows[0].Index);
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제할 행을 찾을 수 없습니다.", "실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+
+
+                }
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"데이터 삭제 실패 \r\n Error: {ex.Message}", "DB Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 스캔된 운송장에 대해 전부 삭제
+        private void DELETE_ALL_BUTTON_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,6 @@
             this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SELECT_ALL_BUTTON = new System.Windows.Forms.Button();
             this.SELECT_BUTTON = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,9 +50,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.SELECT_ALL_BUTTON = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.DELETE_BUTTON = new System.Windows.Forms.Button();
+            this.DELETE_SELECT_BUTTON = new System.Windows.Forms.Button();
+            this.DELETE_ALL_BUTTON = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.ScanDataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,10 +69,12 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count_value = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ScanDataGridView1
@@ -177,26 +179,14 @@
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 407);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(406, 219);
             this.panel1.TabIndex = 1;
             // 
-            // SELECT_ALL_BUTTON
-            // 
-            this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(938, 376);
-            this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
-            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(105, 28);
-            this.SELECT_ALL_BUTTON.TabIndex = 3;
-            this.SELECT_ALL_BUTTON.Text = "전체 조회";
-            this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
-            this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
-            // 
             // SELECT_BUTTON
             // 
-            this.SELECT_BUTTON.Location = new System.Drawing.Point(278, 8);
+            this.SELECT_BUTTON.Location = new System.Drawing.Point(281, 175);
             this.SELECT_BUTTON.Name = "SELECT_BUTTON";
             this.SELECT_BUTTON.Size = new System.Drawing.Size(105, 28);
             this.SELECT_BUTTON.TabIndex = 3;
@@ -208,7 +198,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 188);
+            this.label7.Location = new System.Drawing.Point(16, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 18);
             this.label7.TabIndex = 8;
@@ -218,7 +208,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 138);
+            this.label6.Location = new System.Drawing.Point(16, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 18);
             this.label6.TabIndex = 7;
@@ -228,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 96);
+            this.label5.Location = new System.Drawing.Point(16, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 18);
             this.label5.TabIndex = 6;
@@ -238,7 +228,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 50);
+            this.label4.Location = new System.Drawing.Point(16, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 18);
             this.label4.TabIndex = 5;
@@ -246,61 +236,74 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(75, 188);
+            this.textBox4.Location = new System.Drawing.Point(74, 156);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(164, 21);
             this.textBox4.TabIndex = 4;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 142);
+            this.textBox3.Location = new System.Drawing.Point(74, 110);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 21);
             this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 99);
+            this.textBox2.Location = new System.Drawing.Point(74, 67);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 21);
             this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 50);
+            this.textBox1.Location = new System.Drawing.Point(74, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 21);
             this.textBox1.TabIndex = 1;
             // 
-            // label1
+            // SELECT_ALL_BUTTON
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SELECT";
+            this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(10, 11);
+            this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(105, 28);
+            this.SELECT_ALL_BUTTON.TabIndex = 3;
+            this.SELECT_ALL_BUTTON.Text = "전체 조회";
+            this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
+            this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.DELETE_BUTTON);
+            this.panel3.Controls.Add(this.DELETE_SELECT_BUTTON);
+            this.panel3.Controls.Add(this.DELETE_ALL_BUTTON);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(449, 407);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(338, 219);
             this.panel3.TabIndex = 2;
             // 
-            // DELETE_BUTTON
+            // DELETE_SELECT_BUTTON
             // 
-            this.DELETE_BUTTON.Location = new System.Drawing.Point(169, 69);
-            this.DELETE_BUTTON.Name = "DELETE_BUTTON";
-            this.DELETE_BUTTON.Size = new System.Drawing.Size(124, 35);
-            this.DELETE_BUTTON.TabIndex = 3;
-            this.DELETE_BUTTON.Text = "행 삭제";
-            this.DELETE_BUTTON.UseVisualStyleBackColor = true;
+            this.DELETE_SELECT_BUTTON.Location = new System.Drawing.Point(27, 68);
+            this.DELETE_SELECT_BUTTON.Name = "DELETE_SELECT_BUTTON";
+            this.DELETE_SELECT_BUTTON.Size = new System.Drawing.Size(124, 35);
+            this.DELETE_SELECT_BUTTON.TabIndex = 4;
+            this.DELETE_SELECT_BUTTON.Text = "스캔 부분 삭제";
+            this.DELETE_SELECT_BUTTON.UseVisualStyleBackColor = true;
+            this.DELETE_SELECT_BUTTON.Click += new System.EventHandler(this.DELETE_SELECT_BUTTON_Click);
+            // 
+            // DELETE_ALL_BUTTON
+            // 
+            this.DELETE_ALL_BUTTON.Location = new System.Drawing.Point(187, 68);
+            this.DELETE_ALL_BUTTON.Name = "DELETE_ALL_BUTTON";
+            this.DELETE_ALL_BUTTON.Size = new System.Drawing.Size(124, 35);
+            this.DELETE_ALL_BUTTON.TabIndex = 3;
+            this.DELETE_ALL_BUTTON.Text = "스캔 전체 삭제";
+            this.DELETE_ALL_BUTTON.UseVisualStyleBackColor = true;
+            this.DELETE_ALL_BUTTON.Click += new System.EventHandler(this.DELETE_ALL_BUTTON_Click);
             // 
             // label3
             // 
@@ -403,7 +406,7 @@
             // count_value
             // 
             this.count_value.AutoSize = true;
-            this.count_value.Location = new System.Drawing.Point(1014, 420);
+            this.count_value.Location = new System.Drawing.Point(86, 55);
             this.count_value.Name = "count_value";
             this.count_value.Size = new System.Drawing.Size(61, 12);
             this.count_value.TabIndex = 11;
@@ -412,21 +415,30 @@
             // count
             // 
             this.count.AutoSize = true;
-            this.count.Location = new System.Drawing.Point(936, 420);
+            this.count.Location = new System.Drawing.Point(8, 55);
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(81, 12);
             this.count.TabIndex = 10;
             this.count.Text = "조회된 건수 : ";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.count_value);
+            this.panel2.Controls.Add(this.count);
+            this.panel2.Controls.Add(this.SELECT_ALL_BUTTON);
+            this.panel2.Location = new System.Drawing.Point(910, 407);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(248, 96);
+            this.panel2.TabIndex = 12;
             // 
             // ScanData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 712);
-            this.Controls.Add(this.count_value);
-            this.Controls.Add(this.count);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ScanDataGridView2);
-            this.Controls.Add(this.SELECT_ALL_BUTTON);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScanDataGridView1);
@@ -439,8 +451,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -459,7 +472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TRS_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRS_DATE;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SELECT_BUTTON;
@@ -471,7 +483,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button DELETE_BUTTON;
+        private System.Windows.Forms.Button DELETE_ALL_BUTTON;
         private System.Windows.Forms.Button SELECT_ALL_BUTTON;
         private System.Windows.Forms.DataGridView ScanDataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -487,5 +499,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.Label count_value;
         private System.Windows.Forms.Label count;
+        private System.Windows.Forms.Button DELETE_SELECT_BUTTON;
+        private System.Windows.Forms.Panel panel2;
     }
 }
