@@ -47,7 +47,8 @@ namespace gidor_Helper.domain.ScanData
                     String sqlQuery = "SELECT  " +
                                             "A.INV_NO ,         " +
                                             "A.BRA_ID ,         " +
-                                            "B.COD_CONT,       " +
+                                            "A.SCANN_SLT,       " +
+                                            "B.COD_CONT,        " +
                                             "A.SCANN_DATE,      " +
                                             "A.SCANN_TIME,      " +
                                             "A.CAR_ID  ,        " +
@@ -106,15 +107,16 @@ namespace gidor_Helper.domain.ScanData
                         String selectColumn = ScanDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                         String sqlQuery = "SELECT " +
-                                            " A.INV_NO , " +
-                                            " A.BRA_ID ,  " +
-                                            " B.COD_CONT ,  " +
-                                            " A.SCANN_DATE , " +
-                                            " A.SCANN_TIME , " +
-                                            " A.CAR_ID  ,  " +
-                                            " A.SCANN_USR_ID  , " +
-                                            " A.TRS_ID   ,     " +
-                                            " A.TRS_NAME ,     " +
+                                            " A.INV_NO          , " +
+                                            " A.BRA_ID          ,  " +
+                                            " A.SCANN_SLT       , " +
+                                            " B.COD_CONT        , " +
+                                            " A.SCANN_DATE      , " +
+                                            " A.SCANN_TIME      , " +
+                                            " A.CAR_ID          , " +
+                                            " A.SCANN_USR_ID    , " +
+                                            " A.TRS_ID          ,  " +
+                                            " A.TRS_NAME        , " +
                                             " A.TRS_DATE " +
                                             " FROM LS101T0 A " +
                                             " INNER JOIN COD B " +
@@ -156,14 +158,16 @@ namespace gidor_Helper.domain.ScanData
                     String sqlQuery = "SELECT  " +
                                             "A.INV_NO ,         " +
                                             "A.BRA_ID ,         " +
-                                            "B.COD_CONT,       " +
+                                            "A.SCANN_SLT,        " +
+                                            "B.COD_CONT ,       " +
                                             "A.SCANN_DATE,      " +
                                             "A.SCANN_TIME,      " +
                                             "A.CAR_ID  ,        " +
                                             "A.SCANN_USR_ID  ,  " +
+                                            "A.HTT_ID   ,       " +
                                             "A.TRS_ID   ,       " +
                                             "A.TRS_NAME ,       " +
-                                            "A.TRS_DATE " +
+                                            "A.TRS_DATE         " +
                                          " FROM LS101T0 A " +
                                          " INNER JOIN COD B " +
                                          " ON A.SCANN_SLT = B.COD " ;
@@ -225,6 +229,11 @@ namespace gidor_Helper.domain.ScanData
 
                     ScanDataGridView1.DataSource = dataTable;
 
+
+                    ScanDataGridView1.ReadOnly = true;
+                    ScanDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    ScanDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                 }
             } catch(Exception ex)
             {
@@ -238,50 +247,41 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
+                // 선택된 행이 0보다 크다면 
                 if(ScanDataGridView2.SelectedRows.Count > 0 )
                 {
-
-                }
-                
-
-                ///////////////////////////////////     2024.0912 금요일 작업
-
-
-
-                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
-                {
-                    conn.Open();
-                    // 선택한 행의 컬럼INV_NO , SCANN_SLT를 인덱스로 설정하지 않고 직접 설정해 값을 가져와 toString()
-                    String INV_NO = ScanDataGridView2.SelectedRows[0].Cells["INV_NO"].Value.ToString();
-                    String SCANN_SLT = ScanDataGridView2.SelectedRows[0].Cells["COD_CONT"].Value.ToString();
-
-                    
-
-                    String sqlQuery = "DELETE FROM LS101T0 " +
-                                        $" WHERE INV_NO = '{INV_NO}' " +
-                                        $" AND SCAN_SLT = '{SCANN_SLT}' ";
-
-
-                    using (SqlCommand sqlCommand = new SqlCommand(sqlQuery, conn))
+                    using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
                     {
-                        // ExecuteNonQuery() INSERT, UPDATE, DELETE와 같은 데이터 변경 작업에 사용되며. 이 메서드는 데이터베이스에서 변화가 생긴 행의 갯수를 반환
-                        int deleteRow = sqlCommand.ExecuteNonQuery();
+                        conn.Open();
+                        // 선택한 행의 컬럼INV_NO , SCANN_SLT를 인덱스로 설정하지 않고 직접 설정해 값을 가져와 toString()
+                        String INV_NO = ScanDataGridView2.SelectedRows[0].Cells["INV_NO"].Value.ToString();
+                        String SCANN_SLT = ScanDataGridView2.SelectedRows[0].Cells["SCANN_SLT"].Value.ToString();
 
-                        // 실행된 쿼리 결과 확인
-                        if (deleteRow > 0)
+
+
+                        String sqlQuery = "DELETE FROM LS101T0 " +
+                                            $" WHERE INV_NO = '{INV_NO}' " +
+                                            $" AND SCANN_SLT = '{SCANN_SLT}' ";
+
+
+                        using (SqlCommand sqlCommand = new SqlCommand(sqlQuery, conn))
                         {
-                            MessageBox.Show("행이 성공적으로 삭제되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // 삭제된 행을 DataGridView에서 제거
-                            ScanDataGridView2.Rows.RemoveAt(ScanDataGridView2.SelectedRows[0].Index);
-                        }
-                        else
-                        {
-                            MessageBox.Show("삭제할 행을 찾을 수 없습니다.", "실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            // ExecuteNonQuery() INSERT, UPDATE, DELETE와 같은 데이터 변경 작업에 사용되며. 이 메서드는 데이터베이스에서 변화가 생긴 행의 갯수를 반환
+                            int deleteRow = sqlCommand.ExecuteNonQuery();
+
+                            // 실행된 쿼리 결과 확인
+                            if (deleteRow > 0)
+                            {
+                                MessageBox.Show("행이 성공적으로 삭제되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // 삭제된 행을 DataGridView에서 제거
+                                ScanDataGridView2.Rows.RemoveAt(ScanDataGridView2.SelectedRows[0].Index);
+                            }
+                            else
+                            {
+                                MessageBox.Show("삭제할 행을 찾을 수 없습니다.", "실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                     }
-
-
-
                 }
 
             } catch (Exception ex)

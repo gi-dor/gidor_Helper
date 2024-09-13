@@ -267,7 +267,7 @@
             this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(10, 11);
             this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
-            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(105, 28);
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(139, 41);
             this.SELECT_ALL_BUTTON.TabIndex = 3;
             this.SELECT_ALL_BUTTON.Text = "전체 조회";
             this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
@@ -406,7 +406,7 @@
             // count_value
             // 
             this.count_value.AutoSize = true;
-            this.count_value.Location = new System.Drawing.Point(86, 55);
+            this.count_value.Location = new System.Drawing.Point(86, 70);
             this.count_value.Name = "count_value";
             this.count_value.Size = new System.Drawing.Size(61, 12);
             this.count_value.TabIndex = 11;
@@ -415,7 +415,7 @@
             // count
             // 
             this.count.AutoSize = true;
-            this.count.Location = new System.Drawing.Point(8, 55);
+            this.count.Location = new System.Drawing.Point(8, 70);
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(81, 12);
             this.count.TabIndex = 10;
@@ -427,9 +427,9 @@
             this.panel2.Controls.Add(this.count_value);
             this.panel2.Controls.Add(this.count);
             this.panel2.Controls.Add(this.SELECT_ALL_BUTTON);
-            this.panel2.Location = new System.Drawing.Point(910, 407);
+            this.panel2.Location = new System.Drawing.Point(889, 407);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(248, 96);
+            this.panel2.Size = new System.Drawing.Size(269, 175);
             this.panel2.TabIndex = 12;
             // 
             // ScanData
