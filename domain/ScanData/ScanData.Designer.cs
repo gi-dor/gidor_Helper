@@ -50,11 +50,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SELECT_ALL_BUTTON = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.DELETE_SELECT_BUTTON = new System.Windows.Forms.Button();
-            this.DELETE_ALL_BUTTON = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.ScanDataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,19 +62,30 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count_value = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.SELECT_ALL_BUTTON = new System.Windows.Forms.Button();
+            this.DELETE_SELECT_BUTTON = new System.Windows.Forms.Button();
+            this.count_value = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SCANN_DATE_ = new System.Windows.Forms.Label();
+            this.TRS_DATE_TEXT = new System.Windows.Forms.TextBox();
+            this.SCANN_TIME_TEXT = new System.Windows.Forms.TextBox();
+            this.SCANN_DATE_TEXT = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ScanDataGridView1
             // 
+            this.ScanDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScanDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ScanDataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.ScanDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ScanDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -263,61 +269,12 @@
             this.textBox1.Size = new System.Drawing.Size(164, 21);
             this.textBox1.TabIndex = 1;
             // 
-            // SELECT_ALL_BUTTON
-            // 
-            this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(10, 11);
-            this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
-            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(139, 41);
-            this.SELECT_ALL_BUTTON.TabIndex = 3;
-            this.SELECT_ALL_BUTTON.Text = "전체 조회";
-            this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
-            this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.DELETE_SELECT_BUTTON);
-            this.panel3.Controls.Add(this.DELETE_ALL_BUTTON);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(449, 407);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 219);
-            this.panel3.TabIndex = 2;
-            // 
-            // DELETE_SELECT_BUTTON
-            // 
-            this.DELETE_SELECT_BUTTON.Location = new System.Drawing.Point(27, 68);
-            this.DELETE_SELECT_BUTTON.Name = "DELETE_SELECT_BUTTON";
-            this.DELETE_SELECT_BUTTON.Size = new System.Drawing.Size(124, 35);
-            this.DELETE_SELECT_BUTTON.TabIndex = 4;
-            this.DELETE_SELECT_BUTTON.Text = "스캔 부분 삭제";
-            this.DELETE_SELECT_BUTTON.UseVisualStyleBackColor = true;
-            this.DELETE_SELECT_BUTTON.Click += new System.EventHandler(this.DELETE_SELECT_BUTTON_Click);
-            // 
-            // DELETE_ALL_BUTTON
-            // 
-            this.DELETE_ALL_BUTTON.Location = new System.Drawing.Point(187, 68);
-            this.DELETE_ALL_BUTTON.Name = "DELETE_ALL_BUTTON";
-            this.DELETE_ALL_BUTTON.Size = new System.Drawing.Size(124, 35);
-            this.DELETE_ALL_BUTTON.TabIndex = 3;
-            this.DELETE_ALL_BUTTON.Text = "스캔 전체 삭제";
-            this.DELETE_ALL_BUTTON.UseVisualStyleBackColor = true;
-            this.DELETE_ALL_BUTTON.Click += new System.EventHandler(this.DELETE_ALL_BUTTON_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "DELETE";
-            // 
             // ScanDataGridView2
             // 
+            this.ScanDataGridView2.AllowUserToAddRows = false;
+            this.ScanDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScanDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ScanDataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.ScanDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ScanDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -404,34 +361,14 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
-            // count_value
-            // 
-            this.count_value.AutoSize = true;
-            this.count_value.Location = new System.Drawing.Point(86, 70);
-            this.count_value.Name = "count_value";
-            this.count_value.Size = new System.Drawing.Size(61, 12);
-            this.count_value.TabIndex = 11;
-            this.count_value.Text = "              ";
-            // 
             // count
             // 
             this.count.AutoSize = true;
-            this.count.Location = new System.Drawing.Point(8, 70);
+            this.count.Location = new System.Drawing.Point(1008, 421);
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(81, 12);
             this.count.TabIndex = 10;
             this.count.Text = "조회된 건수 : ";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.count_value);
-            this.panel2.Controls.Add(this.count);
-            this.panel2.Controls.Add(this.SELECT_ALL_BUTTON);
-            this.panel2.Location = new System.Drawing.Point(889, 407);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 175);
-            this.panel2.TabIndex = 12;
             // 
             // label1
             // 
@@ -443,15 +380,125 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "상세 정보";
             // 
+            // SELECT_ALL_BUTTON
+            // 
+            this.SELECT_ALL_BUTTON.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(994, 463);
+            this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(139, 41);
+            this.SELECT_ALL_BUTTON.TabIndex = 3;
+            this.SELECT_ALL_BUTTON.Text = "전체 조회";
+            this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
+            this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
+            // 
+            // DELETE_SELECT_BUTTON
+            // 
+            this.DELETE_SELECT_BUTTON.Location = new System.Drawing.Point(994, 570);
+            this.DELETE_SELECT_BUTTON.Name = "DELETE_SELECT_BUTTON";
+            this.DELETE_SELECT_BUTTON.Size = new System.Drawing.Size(139, 41);
+            this.DELETE_SELECT_BUTTON.TabIndex = 4;
+            this.DELETE_SELECT_BUTTON.Text = "스캔 부분 삭제";
+            this.DELETE_SELECT_BUTTON.UseVisualStyleBackColor = true;
+            this.DELETE_SELECT_BUTTON.Click += new System.EventHandler(this.DELETE_SELECT_BUTTON_Click);
+            // 
+            // count_value
+            // 
+            this.count_value.AutoSize = true;
+            this.count_value.Location = new System.Drawing.Point(1095, 421);
+            this.count_value.Name = "count_value";
+            this.count_value.Size = new System.Drawing.Size(61, 12);
+            this.count_value.TabIndex = 11;
+            this.count_value.Text = "              ";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.UpdateButton);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.SCANN_DATE_);
+            this.panel2.Controls.Add(this.TRS_DATE_TEXT);
+            this.panel2.Controls.Add(this.SCANN_TIME_TEXT);
+            this.panel2.Controls.Add(this.SCANN_DATE_TEXT);
+            this.panel2.Location = new System.Drawing.Point(451, 407);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(406, 219);
+            this.panel2.TabIndex = 14;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(281, 175);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(105, 28);
+            this.UpdateButton.TabIndex = 3;
+            this.UpdateButton.Text = "수정";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 18);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "작성 날짜";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(16, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 18);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "스캔 시간";
+            // 
+            // SCANN_DATE_
+            // 
+            this.SCANN_DATE_.AutoSize = true;
+            this.SCANN_DATE_.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SCANN_DATE_.Location = new System.Drawing.Point(16, 18);
+            this.SCANN_DATE_.Name = "SCANN_DATE_";
+            this.SCANN_DATE_.Size = new System.Drawing.Size(60, 18);
+            this.SCANN_DATE_.TabIndex = 5;
+            this.SCANN_DATE_.Text = "스캔 날짜";
+            // 
+            // TRS_DATE_TEXT
+            // 
+            this.TRS_DATE_TEXT.Location = new System.Drawing.Point(100, 107);
+            this.TRS_DATE_TEXT.Name = "TRS_DATE_TEXT";
+            this.TRS_DATE_TEXT.Size = new System.Drawing.Size(164, 21);
+            this.TRS_DATE_TEXT.TabIndex = 3;
+            // 
+            // SCANN_TIME_TEXT
+            // 
+            this.SCANN_TIME_TEXT.Location = new System.Drawing.Point(100, 65);
+            this.SCANN_TIME_TEXT.Name = "SCANN_TIME_TEXT";
+            this.SCANN_TIME_TEXT.Size = new System.Drawing.Size(164, 21);
+            this.SCANN_TIME_TEXT.TabIndex = 2;
+            // 
+            // SCANN_DATE_TEXT
+            // 
+            this.SCANN_DATE_TEXT.Location = new System.Drawing.Point(100, 18);
+            this.SCANN_DATE_TEXT.Name = "SCANN_DATE_TEXT";
+            this.SCANN_DATE_TEXT.Size = new System.Drawing.Size(164, 21);
+            this.SCANN_DATE_TEXT.TabIndex = 1;
+            // 
             // ScanData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 712);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1307, 712);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.count_value);
+            this.Controls.Add(this.DELETE_SELECT_BUTTON);
+            this.Controls.Add(this.SELECT_ALL_BUTTON);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.count);
             this.Controls.Add(this.ScanDataGridView2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScanDataGridView1);
             this.Name = "ScanData";
@@ -460,8 +507,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -485,8 +530,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TRS_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRS_DATE;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SELECT_BUTTON;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -496,8 +539,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button DELETE_ALL_BUTTON;
-        private System.Windows.Forms.Button SELECT_ALL_BUTTON;
         private System.Windows.Forms.DataGridView ScanDataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -510,10 +551,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.Label count_value;
         private System.Windows.Forms.Label count;
-        private System.Windows.Forms.Button DELETE_SELECT_BUTTON;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SELECT_ALL_BUTTON;
+        private System.Windows.Forms.Button DELETE_SELECT_BUTTON;
+        private System.Windows.Forms.Label count_value;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label SCANN_DATE_;
+        private System.Windows.Forms.TextBox TRS_DATE_TEXT;
+        private System.Windows.Forms.TextBox SCANN_TIME_TEXT;
+        private System.Windows.Forms.TextBox SCANN_DATE_TEXT;
     }
 }
