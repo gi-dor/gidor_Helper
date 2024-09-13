@@ -282,6 +282,9 @@ namespace gidor_Helper.domain.ScanData
                             }
                         }
                     }
+                } else
+                {
+                    MessageBox.Show("삭제할 행을 선택하지 않았습니다.", "실패 메세지", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             } catch (Exception ex)

@@ -70,6 +70,7 @@
             this.count_value = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ScanDataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -331,7 +332,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
-            this.ScanDataGridView2.Location = new System.Drawing.Point(12, 197);
+            this.ScanDataGridView2.Location = new System.Drawing.Point(12, 228);
             this.ScanDataGridView2.Name = "ScanDataGridView2";
             this.ScanDataGridView2.RowTemplate.Height = 23;
             this.ScanDataGridView2.Size = new System.Drawing.Size(1146, 173);
@@ -432,11 +433,22 @@
             this.panel2.Size = new System.Drawing.Size(269, 175);
             this.panel2.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(12, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "상세 정보";
+            // 
             // ScanData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 712);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ScanDataGridView2);
             this.Controls.Add(this.panel3);
@@ -454,6 +466,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -501,5 +514,6 @@
         private System.Windows.Forms.Label count;
         private System.Windows.Forms.Button DELETE_SELECT_BUTTON;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
