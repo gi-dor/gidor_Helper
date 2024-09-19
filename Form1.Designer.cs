@@ -82,12 +82,14 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.panel6);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 11);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1284, 125);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1392, 141);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // panel6
@@ -105,7 +107,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 3);
             this.panel6.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1271, 119);
+            this.panel6.Size = new System.Drawing.Size(1389, 126);
             this.panel6.TabIndex = 19;
             // 
             // inv
@@ -428,18 +430,21 @@
             // 
             // mainPage
             // 
+            this.mainPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainPage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mainPage.Location = new System.Drawing.Point(1, 142);
+            this.mainPage.Location = new System.Drawing.Point(1, 158);
             this.mainPage.Name = "mainPage";
-            this.mainPage.Size = new System.Drawing.Size(1271, 699);
+            this.mainPage.Size = new System.Drawing.Size(1400, 683);
             this.mainPage.TabIndex = 20;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 861);
+            this.ClientSize = new System.Drawing.Size(1413, 861);
             this.Controls.Add(this.mainPage);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
