@@ -69,7 +69,7 @@ namespace gidor_Helper.domain.ScanData
                                          " FROM LS101T0 A " +
                                          " INNER JOIN COD B " +
                                          " ON A.SCANN_SLT = B.COD " +
-                                         " ORDER BY A.SCANN_DATE DESC";
+                                         " ORDER BY A.SCANN_DATE , A.SCANN_TIME DESC";
 
                     // SQL 쿼리를 실행시작 객체
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
@@ -140,7 +140,8 @@ namespace gidor_Helper.domain.ScanData
                                             " FROM LS101T0 A " +
                                             " INNER JOIN COD B " +
                                             " ON A.SCANN_SLT = B.COD " +
-                                            $" WHERE INV_NO = '{selectColumn}' " ;
+                                            $" WHERE INV_NO = '{selectColumn}' " +
+                                            $" ORDER BY A.SCANN_DATE , A.SCANN_TIME ASC" ;
 
                         SqlCommand sqlCommand = new SqlCommand(sqlQuery, conn);
                         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
