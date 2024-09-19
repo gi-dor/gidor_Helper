@@ -186,6 +186,9 @@ namespace gidor_Helper.domain.ScanData
                 } else
                 {
                     MessageBox.Show($"조건 조회를 위해 값을 입력해주세요 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    // return 문을 추가해 기존에 조건값 없이 조회 실행시 실패 메시지 이후 전체 조회 되는 기능을 제어했다
+                    return;
                 }
                 using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
                 {
@@ -464,15 +467,21 @@ namespace gidor_Helper.domain.ScanData
 
         private void RefreshGrid()
         {
+            String selectColumn = ScanDataGridView2.SelectedRows[0].Cells[0].Value.ToString();
             // dataGridView 새로고침
-            string sqlQuery = "SELECT * FROM LS101T0"; 
+            string sqlQuery = "SELECT * FROM LS101T0 " +
+                                $" WHERE INV_NO = '{selectColumn}' " +
+                                $" ORDER BY SCANN_DATE , SCANN_TIME ASC"; 
 
             using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
             {
                 conn.Open();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
+
+
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
+                ScanDataGridView1.DataSource = dataTable;
                 ScanDataGridView2.DataSource = dataTable;
             }
         }
