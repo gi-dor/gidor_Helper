@@ -38,6 +38,16 @@ namespace gidor_Helper.domain.ScanData
             }
         }
 
+
+
+
+        /**
+         * 
+         * 조건 조회시 dataGridView2 SCANN_DATE , SCANN_TIME 순서에 맞게 정렬 기능 추가 해야함
+         * 
+         * 
+         */
+
         private void SELECT_ALL_BUTTON_Click(object sender, EventArgs e)
         {
             try
@@ -92,6 +102,13 @@ namespace gidor_Helper.domain.ScanData
         }
 
 
+
+        /**
+         * 
+         * 조회시 dataGridView2 SCANN_DATE , SCANN_TIME 순서에 맞게 정렬 기능 추가 해야함
+         * 
+         * 
+         */
 
 
         // 행 클릭시 해당하는 송장번호에 대한 상세 검색
@@ -149,6 +166,13 @@ namespace gidor_Helper.domain.ScanData
             }
         }
 
+        /**
+         * 
+         * 조건 조회시 dataGridView2 SCANN_DATE , SCANN_TIME 순서에 맞게 정렬 기능 추가 해야함
+         * 
+         * 
+         */
+
 
         // 조건 조회 
         // 1. 조건 조회를 위해 text 값을 입력해야 작동하게
@@ -195,8 +219,6 @@ namespace gidor_Helper.domain.ScanData
                     {
                         where.Add($"BRA_ID LIKE '%{textBox2.Text}%'");
                     }
-
-
 
                     /* 
                      * 1. textBox3 와 textBox4 값 둘다 입력되었을 때는 Between A And B를 사용한다
@@ -313,8 +335,6 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
-
-
                 /*
                  SqlConnection 데이터베이스에 대한 연결을 관리 데이터베이스에 연결을 열고 닫는 역할.
                  명령을 실행하기 전에 연결을 열어야 하며, 작업이 끝난 후에는 연결을 닫아야 한다 ,  using(){} 문으로 인해 close()명시적으로 하지 않아도된다 Dispose().
@@ -344,16 +364,56 @@ namespace gidor_Helper.domain.ScanData
                         String trsId = selectedRow.Cells["TRS_ID"].Value.ToString();
                         String trsName = selectedRow.Cells["TRS_NAME"].Value.ToString();
 
-                        string updateQuery = "UPDATE LS101T0 SET " +
-                                               $"BRA_ID = '{SCANN_BRAID_TEXT.Text}' " +
-                                               $"SCANN_SLT = '{SCAN_SLT_TEXT.Text}' " +
-                                               $"SCANN_DATE = '{SCANN_DATE_TEXT.Text}' " +
-                                               $"SCANN_TIME = '{SCANN_TIME_TEXT.Text}' " +
-                                               $"CAR_ID = '{SCANN_CAR_TEXT.Text}' " +
-                                               $"SCANN_USR_ID = '{SCANN_USR_ID_TEXT.Text}' " +
-                                               $"HTT_ID = '{SCANN_HTT_TEXT.Text}' " +
-                                               $"TRS_ID = '{SCANN_USR_ID_TEXT.Text}' " +
-                                               $"TRS_NAME = '{SCANN_TRS_NAME_TEXT.Text}' " +
+
+                        List<string> setColumn = new List<string>();
+
+                        // UPDATE 테이블명 SET 변경될
+                        if (!String.IsNullOrEmpty(SCANN_BRAID_TEXT.Text))
+                        {
+                            setColumn.Add($"BRA_ID = '{SCANN_BRAID_TEXT.Text}'");
+                        }
+
+                        if (!String.IsNullOrEmpty(SCAN_SLT_TEXT.Text))
+                        {
+                            setColumn.Add($"SCANN_SLT = '{SCAN_SLT_TEXT.Text}'");
+                        }
+
+                        if (!String.IsNullOrEmpty(SCANN_DATE_TEXT.Text))
+                        {
+                            setColumn.Add($"SCANN_DATE = '{SCANN_DATE_TEXT.Text}'");
+                        }
+
+                        if (!String.IsNullOrEmpty(SCANN_TIME_TEXT.Text))
+                        {
+                            setColumn.Add($"SCANN_TIME = '{SCANN_TIME_TEXT.Text}'");
+                        }
+
+                        if(!String.IsNullOrEmpty(SCANN_CAR_TEXT.Text))
+                        {
+                            setColumn.Add($"CAR_ID = '{SCANN_CAR_TEXT.Text}'");
+                        }
+
+                        if(!String.IsNullOrEmpty(SCANN_USR_ID_TEXT.Text))
+                        {
+                            setColumn.Add($"SCANN_USR_ID = '{SCANN_USR_ID_TEXT.Text}'");
+                            setColumn.Add($"TRS_ID = '{SCANN_USR_ID_TEXT.Text}'");
+                        }
+
+                        if(!String.IsNullOrEmpty(SCANN_HTT_TEXT.Text))
+                        {
+                            setColumn.Add($"HTT_ID = '{SCANN_HTT_TEXT.Text}'");
+                        }
+
+                        if(!String.IsNullOrEmpty(SCANN_TRS_NAME_TEXT.Text))
+                        {
+                            setColumn.Add($"TRS_NAME = '{SCANN_TRS_NAME_TEXT.Text}'");
+                        }
+
+
+                        string result = string.Join(", ", setColumn);
+
+                        string updateQuery = $"UPDATE LS101T0 SET {result}" +
+                                                $" , TRS_DATE = GETDATE()" +
                                             $" WHERE INV_NO = '{invNo}' " +
                                             $" AND BRA_ID = '{braId}' " +
                                             $" AND SCANN_SLT = '{scannSlt}' " +
@@ -365,12 +425,9 @@ namespace gidor_Helper.domain.ScanData
                                             $" AND TRS_ID = '{trsId}' " +
                                             $" AND TRS_NAME = '{trsName}'";
 
-                        List<string> where = new List<string>();
-
-
                         /*
                          SQL 쿼리를 데이터베이스에 실행하기 위한 객체. 쿼리를 실행하고 결과를 반환하거나 데이터베이스를 수정한다.
-                         SqlCommand는 열려 있는 SqlConnection과 연결되어 있어야 명령을 실행할 수 있습니다.
+                         SqlCommand는 열려 있는 SqlConnection과 연결되어 있어야 명령을 실행
                          */
                         // SqlCommand를 사용하기 위해 또 다른 using을 씀
                         using (SqlCommand sqlCommand = new SqlCommand(updateQuery,conn))
@@ -406,86 +463,7 @@ namespace gidor_Helper.domain.ScanData
 
 
 
-        private void UpdateButton_Click2(object sender, EventArgs e)
-        {
-            try
-            {
-                // 선택된 행이 1개 일때만 가능하게 
-                if (ScanDataGridView2.SelectedRows.Count == 1)
-                {
-                    using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
-                    {
-                        conn.Open();
-
-                        // 선택한 행의 첫번째 라는 의미에서 [0]을 쓴다는데 굳이 이래야하나...
-                        DataGridViewRow selectedRow = ScanDataGridView2.SelectedRows[0];
-
-                        String invNo = selectedRow.Cells["INV_NO"].Value.ToString();
-                        String braId = selectedRow.Cells["BRA_ID"].Value.ToString();
-                        String scannSlt = selectedRow.Cells["SCANN_SLT"].Value.ToString();
-                        String scannDate = selectedRow.Cells["SCANN_DATE"].Value.ToString();
-                        String scannTime = selectedRow.Cells["SCANN_TIME"].Value.ToString();
-                        String carId = selectedRow.Cells["CAR_ID"].Value.ToString();
-                        String scanUsrId = selectedRow.Cells["SCANN_USR_ID"].Value.ToString();
-                        String httId = selectedRow.Cells["HTT_ID"].Value.ToString();
-                        String trsId = selectedRow.Cells["TRS_ID"].Value.ToString();
-                        String trsName = selectedRow.Cells["TRS_NAME"].Value.ToString();
-
-                        string updateQuery = "UPDATE LS101T0 SET " +
-                                               $"BRA_ID = '{SCANN_BRAID_TEXT.Text}' " +
-                                               $"SCANN_SLT = '{SCAN_SLT_TEXT.Text}' " +
-                                               $"SCANN_DATE = '{SCANN_DATE_TEXT.Text}' " +
-                                               $"SCANN_TIME = '{SCANN_TIME_TEXT.Text}' " +
-                                               $"CAR_ID = '{SCANN_CAR_TEXT.Text}' " +
-                                               $"SCANN_USR_ID = '{SCANN_USR_ID_TEXT.Text}' " +
-                                               $"HTT_ID = '{SCANN_HTT_TEXT.Text}' " +
-                                               $"TRS_ID = '{SCANN_USR_ID_TEXT.Text}' " +
-                                               $"TRS_NAME = '{SCANN_TRS_NAME_TEXT.Text}' " +
-                                            $" WHERE INV_NO = '{invNo}' " +
-                                            $" AND BRA_ID = '{braId}' " +
-                                            $" AND SCANN_SLT = '{scannSlt}' " +
-                                            $" AND SCANN_DATE = '{scannDate}' " +
-                                            $" AND SCANN_TIME = '{scannTime}' " +
-                                            $" AND CAR_ID = '{carId}' " +
-                                            $" AND SCANN_USR_ID = '{scanUsrId}' " +
-                                            $" AND HTT_ID = '{httId}' " +
-                                            $" AND TRS_ID = '{trsId}' " +
-                                            $" AND TRS_NAME = '{trsName}'";
-
-                        SqlCommand sqlCommand = new SqlCommand(updateQuery, conn);
-                        
-                            int updateRow = sqlCommand.ExecuteNonQuery();
-
-
-                            if (updateRow > 0)
-                            {
-                                MessageBox.Show("데이터가 성공적으로 수정되었습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show("데이터 수정 실패.", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        
-
-                    }
-                    // 선택된 행의 갯수가 맞지 않은데 수정 버튼 실행시 알람 메세지  
-                }
-                else if (ScanDataGridView2.SelectedRows.Count > 1)
-                {
-                    MessageBox.Show($"수정에 대한 건은 1번에 1개의 행만 가능합니다 \r\n", "DB Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    // 그외 조건은 선택된 행이 없을때
-                    MessageBox.Show($"수정을 하기 위해서는 1개의 행을 선택해야 합니다 \r\n", "DB Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"데이터 수정 실패 \r\n Error: {ex.Message}", "DB Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+ 
 
 
     }

@@ -113,7 +113,7 @@
             this.ScanDataGridView1.Location = new System.Drawing.Point(12, 12);
             this.ScanDataGridView1.Name = "ScanDataGridView1";
             this.ScanDataGridView1.RowTemplate.Height = 23;
-            this.ScanDataGridView1.Size = new System.Drawing.Size(1146, 159);
+            this.ScanDataGridView1.Size = new System.Drawing.Size(1283, 159);
             this.ScanDataGridView1.TabIndex = 0;
             this.ScanDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ScannDetail);
             // 
@@ -302,7 +302,7 @@
             this.ScanDataGridView2.Location = new System.Drawing.Point(12, 228);
             this.ScanDataGridView2.Name = "ScanDataGridView2";
             this.ScanDataGridView2.RowTemplate.Height = 23;
-            this.ScanDataGridView2.Size = new System.Drawing.Size(1146, 173);
+            this.ScanDataGridView2.Size = new System.Drawing.Size(1283, 173);
             this.ScanDataGridView2.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
