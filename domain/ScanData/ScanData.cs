@@ -438,6 +438,8 @@ namespace gidor_Helper.domain.ScanData
                             if(updateRow > 0)
                             {
                                 MessageBox.Show("데이터가 성공적으로 수정되었습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                RefreshGrid();
                             } else
                             {
                                 MessageBox.Show("데이터 수정 실패.", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -457,6 +459,21 @@ namespace gidor_Helper.domain.ScanData
             } catch (Exception ex)
             {
                 MessageBox.Show($"데이터 수정 실패 \r\n Error: {ex.Message}", "DB Update Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshGrid()
+        {
+            // dataGridView 새로고침
+            string sqlQuery = "SELECT * FROM LS101T0"; 
+
+            using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+            {
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                ScanDataGridView2.DataSource = dataTable;
             }
         }
 
