@@ -41,13 +41,8 @@ namespace gidor_Helper.domain.ScanData
 
 
 
-        /**
-         * 
-         * 조건 조회시 dataGridView2 SCANN_DATE , SCANN_TIME 순서에 맞게 정렬 기능 추가 해야함
-         * 
-         * 
-         */
-
+     
+        // 전체 조회 - SCANN_DATE , SCANN_TIME 에 따른 정렬
         private void SELECT_ALL_BUTTON_Click(object sender, EventArgs e)
         {
             try
@@ -103,15 +98,9 @@ namespace gidor_Helper.domain.ScanData
 
 
 
-        /**
-         * 
-         * 조회시 dataGridView2 SCANN_DATE , SCANN_TIME 순서에 맞게 정렬 기능 추가 해야함
-         * 
-         * 
-         */
-
 
         // 행 클릭시 해당하는 송장번호에 대한 상세 검색
+        // SCANN_DATE , SCANN_TIME 으로 정렬
         private void ScannDetail(object sender, DataGridViewCellEventArgs e)
         {
             // 선택한 행이 1개는 있어야하니 0보다 크게 설정 ?
@@ -250,6 +239,7 @@ namespace gidor_Helper.domain.ScanData
                         sqlQuery += " WHERE " + string.Join(" OR ", where);
                     }
 
+                    sqlQuery += " ORDER BY A.SCANN_DATE, A.SCANN_TIME ASC";
 
 
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
