@@ -125,6 +125,15 @@
     <Content Include="image\tool.jpg" />
     <Content Include="image\user.jpg" />
     <Content Include="image\users.jpg" />
+    <Content Include="project_image\code_manage_All.jpg" />
+    <Content Include="project_image\code_manage_where.jpg" />
+    <Content Include="project_image\cust_manage.jpg" />
+    <Content Include="project_image\Id_manage.jpg" />
+    <Content Include="project_image\main.jpg" />
+    <Content Include="project_image\scann_manage_All.jpg" />
+    <Content Include="project_image\scann_manage_delete.jpg" />
+    <Content Include="project_image\scann_manage_update.jpg" />
+    <Content Include="project_image\scann_manage_where.jpg" />
     <None Include="Resources\users.jpg" />
     <None Include="Resources\user.jpg" />
     <None Include="Resources\tool.jpg" />
