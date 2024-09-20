@@ -58,6 +58,12 @@
     <Compile Include="domain\ScanData\ScanData.Designer.cs">
       <DependentUpon>ScanData.cs</DependentUpon>
     </Compile>
+    <Compile Include="domain\User\IdManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="domain\User\IdManage.Designer.cs">
+      <DependentUpon>IdManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="domain\ScanData\ScanData.resx">
       <DependentUpon>ScanData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="domain\User\IdManage.resx">
+      <DependentUpon>IdManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

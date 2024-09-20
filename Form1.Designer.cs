@@ -292,6 +292,7 @@
             this.user_admin.Name = "user_admin";
             this.user_admin.Size = new System.Drawing.Size(106, 111);
             this.user_admin.TabIndex = 16;
+            this.user_admin.Click += new System.EventHandler(this.Id_Pannel_Click);
             this.user_admin.MouseLeave += new System.EventHandler(this.user_Pannel_Leave);
             this.user_admin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pannel_Move);
             // 
@@ -306,6 +307,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Id_Click);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.user_Pic_Leave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.user_Pic_Move);
             // 

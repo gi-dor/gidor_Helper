@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using gidor_Helper.domain.ScanData;
+using gidor_Helper.domain.User;
 
 namespace gidor_Helper
 {
@@ -314,5 +315,28 @@ namespace gidor_Helper
             this.mainPage.Controls.Add(scanData);
             scanData.Show();
         }
+
+        private void Id_Pannel_Click(object sender, EventArgs e)
+        {
+            IdManage idManage = new IdManage();
+            idManage.TopLevel = false;
+            idManage.FormBorderStyle = FormBorderStyle.None;
+            idManage.Dock = DockStyle.Fill;
+            this.mainPage.Controls.Clear();
+            this.mainPage.Controls.Add(idManage);
+            idManage.Show();
+        }
+
+        private void Id_Click(object sender, EventArgs e)
+        {
+            IdManage idManage = new IdManage();
+            idManage.TopLevel = false;
+            idManage.FormBorderStyle = FormBorderStyle.None;
+            idManage.Dock = DockStyle.Fill;
+            this.mainPage.Controls.Clear();
+            this.mainPage.Controls.Add(idManage);
+            idManage.Show();
+        }
+
     }
 }
