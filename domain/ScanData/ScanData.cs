@@ -280,10 +280,16 @@ namespace gidor_Helper.domain.ScanData
                     using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
                     {
                         conn.Open();
-
+                        
                         // 선택한 행의 컬럼INV_NO , SCANN_SLT를 인덱스로 설정하지 않고 직접 설정해 값을 가져와 toString()
                         String INV_NO = ScanDataGridView2.SelectedRows[0].Cells["INV_NO"].Value.ToString();
                         String SCANN_SLT = ScanDataGridView2.SelectedRows[0].Cells["SCANN_SLT"].Value.ToString();
+                        String BRA_ID = ScanDataGridView2.SelectedRows[0].Cells["BRA_ID"].Value.ToString();
+                        String SCANN_DATE = ScanDataGridView2.SelectedRows[0].Cells["SCANN_DATE"].Value.ToString();
+                        String SCANN_TIME = ScanDataGridView2.SelectedRows[0].Cells["SCANN_TIME"].Value.ToString();
+                        String HTT_ID = ScanDataGridView2.SelectedRows[0].Cells["HTT_ID"].Value.ToString();
+                        String TRS_ID = ScanDataGridView2.SelectedRows[0].Cells["TRS_ID"].Value.ToString();
+
 
                         // scandatagridView2 에서 빈 행을 선택후 , 삭제 요청시 생서되는 null 예외 처리하기
                         if (String.IsNullOrWhiteSpace(SCANN_SLT) || String.IsNullOrWhiteSpace(INV_NO) ) 
@@ -295,7 +301,12 @@ namespace gidor_Helper.domain.ScanData
 
                         String deleteQuery = "DELETE FROM LS101T0 " +
                                             $" WHERE INV_NO = '{INV_NO}' " +
-                                            $" AND SCANN_SLT = '{SCANN_SLT}' ";
+                                            $" AND SCANN_SLT = '{SCANN_SLT}' " +
+                                            $" AND BRA_ID = '{BRA_ID}' " +
+                                            $" AND SCANN_DATE = '{SCANN_DATE} '" +
+                                            $" AND SCANN_TIME = '{SCANN_TIME} '" +
+                                            $" AND HTT_ID = '{HTT_ID}' " +
+                                            $" AND TRS_ID = '{TRS_ID}' ";
 
 
                         using (SqlCommand sqlCommand = new SqlCommand(deleteQuery, conn))
@@ -306,9 +317,12 @@ namespace gidor_Helper.domain.ScanData
                             // 실행된 쿼리 결과 확인
                             if (deleteRow > 0)
                             {
-                                MessageBox.Show("행이 성공적으로 삭제되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // 삭제된 행을 DataGridView에서 제거
                                 ScanDataGridView2.Rows.RemoveAt(ScanDataGridView2.SelectedRows[0].Index);
+                                // 삭제 완료 이후 메시지 출력
+                                MessageBox.Show("행이 성공적으로 삭제되었습니다.", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // view 새로고침
+                                RefreshDelete();
                             }
                             else
                             {
@@ -469,6 +483,22 @@ namespace gidor_Helper.domain.ScanData
                 conn.Open();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
 
+
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                ScanDataGridView1.DataSource = dataTable;
+                ScanDataGridView2.DataSource = dataTable;
+            }
+        }
+
+        private void RefreshDelete()
+        {
+            String sqlQuery = $"SELECT * FROM LS101T0  ORDER BY SCANN_DATE , SCANN_TIME ASC";
+
+            using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+            {
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
 
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
