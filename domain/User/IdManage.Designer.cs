@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(627, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 33);
             this.button1.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.CRE_DATE_IDMANAGE,
             this.EDIT_DATE_IDMANAGE,
             this.END_DATE_IDMANAGE});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 134);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1283, 383);
@@ -307,7 +307,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(313, 78);
+            this.button2.Location = new System.Drawing.Point(312, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 33);
             this.button2.TabIndex = 3;
@@ -317,6 +317,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.textBox12);
             this.panel2.Controls.Add(this.textBox11);
             this.panel2.Controls.Add(this.textBox10);
@@ -324,9 +325,9 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(746, 14);
+            this.panel2.Location = new System.Drawing.Point(810, 402);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(546, 114);
+            this.panel2.Size = new System.Drawing.Size(482, 114);
             this.panel2.TabIndex = 4;
             // 
             // label12
