@@ -122,7 +122,9 @@ namespace gidor_Helper
                         DataTable dataTable = new DataTable();
                         
                         sqlDataAdapter.Fill(dataTable);
-                        //dataTable.Columns.Clear();
+
+                        // 컬럼 삭제후 재 설정
+                        user_dataGridView2.Columns.Clear();
 
 
                         user_dataGridView2.DataSource = dataTable;
