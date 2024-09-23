@@ -134,6 +134,7 @@
     <Content Include="project_image\scann_manage_delete.jpg" />
     <Content Include="project_image\scann_manage_update.jpg" />
     <Content Include="project_image\scann_manage_where.jpg" />
+    <None Include="Readme.md" />
     <None Include="Resources\users.jpg" />
     <None Include="Resources\user.jpg" />
     <None Include="Resources\tool.jpg" />
