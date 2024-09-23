@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SELECT_ALL_BUTTON = new System.Windows.Forms.Button();
+            this.Id_dataGridView1 = new System.Windows.Forms.DataGridView();
             this.USER_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USER_NAME_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSD_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,17 +40,17 @@
             this.EDIT_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.END_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rmk_text = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.user_braid_text = new System.Windows.Forms.TextBox();
+            this.user_per_text = new System.Windows.Forms.TextBox();
+            this.end_date_text = new System.Windows.Forms.TextBox();
+            this.edit_date_text = new System.Windows.Forms.TextBox();
+            this.cre_date_text = new System.Windows.Forms.TextBox();
+            this.user_cust_id_text = new System.Windows.Forms.TextBox();
+            this.user_psd_text = new System.Windows.Forms.TextBox();
+            this.user_name_text = new System.Windows.Forms.TextBox();
+            this.user_id_text = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,26 +69,27 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Id_dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // SELECT_ALL_BUTTON
             // 
-            this.button1.Location = new System.Drawing.Point(627, 479);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "전체 조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SELECT_ALL_BUTTON.Location = new System.Drawing.Point(627, 479);
+            this.SELECT_ALL_BUTTON.Name = "SELECT_ALL_BUTTON";
+            this.SELECT_ALL_BUTTON.Size = new System.Drawing.Size(149, 33);
+            this.SELECT_ALL_BUTTON.TabIndex = 0;
+            this.SELECT_ALL_BUTTON.Text = "전체 조회";
+            this.SELECT_ALL_BUTTON.UseVisualStyleBackColor = true;
+            this.SELECT_ALL_BUTTON.Click += new System.EventHandler(this.SELECT_ALL_BUTTON_Click);
             // 
-            // dataGridView1
+            // Id_dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Id_dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Id_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Id_dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.USER_ID_IDMANAGE,
             this.USER_NAME_IDMANAGE,
             this.PSD_IDMANAGE,
@@ -98,11 +99,12 @@
             this.CRE_DATE_IDMANAGE,
             this.EDIT_DATE_IDMANAGE,
             this.END_DATE_IDMANAGE});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1283, 383);
-            this.dataGridView1.TabIndex = 1;
+            this.Id_dataGridView1.Location = new System.Drawing.Point(9, 2);
+            this.Id_dataGridView1.Name = "Id_dataGridView1";
+            this.Id_dataGridView1.RowTemplate.Height = 23;
+            this.Id_dataGridView1.Size = new System.Drawing.Size(1283, 383);
+            this.Id_dataGridView1.TabIndex = 1;
+            this.Id_dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Id_Detail);
             // 
             // USER_ID_IDMANAGE
             // 
@@ -153,17 +155,17 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.rmk_text);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.user_braid_text);
+            this.panel1.Controls.Add(this.user_per_text);
+            this.panel1.Controls.Add(this.end_date_text);
+            this.panel1.Controls.Add(this.edit_date_text);
+            this.panel1.Controls.Add(this.cre_date_text);
+            this.panel1.Controls.Add(this.user_cust_id_text);
+            this.panel1.Controls.Add(this.user_psd_text);
+            this.panel1.Controls.Add(this.user_name_text);
+            this.panel1.Controls.Add(this.user_id_text);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -178,14 +180,14 @@
             this.panel1.Size = new System.Drawing.Size(1280, 140);
             this.panel1.TabIndex = 2;
             // 
-            // richTextBox1
+            // rmk_text
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(797, 9);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(398, 119);
-            this.richTextBox1.TabIndex = 22;
-            this.richTextBox1.Text = "";
+            this.rmk_text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rmk_text.Location = new System.Drawing.Point(797, 9);
+            this.rmk_text.Name = "rmk_text";
+            this.rmk_text.Size = new System.Drawing.Size(398, 119);
+            this.rmk_text.TabIndex = 22;
+            this.rmk_text.Text = "";
             // 
             // label11
             // 
@@ -196,77 +198,77 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "비고";
             // 
-            // textBox9
+            // user_braid_text
             // 
-            this.textBox9.Location = new System.Drawing.Point(560, 43);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(135, 21);
-            this.textBox9.TabIndex = 20;
+            this.user_braid_text.Location = new System.Drawing.Point(560, 43);
+            this.user_braid_text.Name = "user_braid_text";
+            this.user_braid_text.Size = new System.Drawing.Size(135, 21);
+            this.user_braid_text.TabIndex = 20;
             // 
-            // textBox8
+            // user_per_text
             // 
-            this.textBox8.Location = new System.Drawing.Point(560, 9);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(135, 21);
-            this.textBox8.TabIndex = 19;
+            this.user_per_text.Location = new System.Drawing.Point(560, 9);
+            this.user_per_text.Name = "user_per_text";
+            this.user_per_text.Size = new System.Drawing.Size(135, 21);
+            this.user_per_text.TabIndex = 19;
             // 
-            // textBox7
+            // end_date_text
             // 
-            this.textBox7.Location = new System.Drawing.Point(295, 70);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(135, 21);
-            this.textBox7.TabIndex = 18;
+            this.end_date_text.Location = new System.Drawing.Point(295, 70);
+            this.end_date_text.Name = "end_date_text";
+            this.end_date_text.Size = new System.Drawing.Size(135, 21);
+            this.end_date_text.TabIndex = 18;
             // 
-            // textBox6
+            // edit_date_text
             // 
-            this.textBox6.Location = new System.Drawing.Point(295, 40);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(135, 21);
-            this.textBox6.TabIndex = 17;
+            this.edit_date_text.Location = new System.Drawing.Point(295, 40);
+            this.edit_date_text.Name = "edit_date_text";
+            this.edit_date_text.Size = new System.Drawing.Size(135, 21);
+            this.edit_date_text.TabIndex = 17;
             // 
-            // textBox5
+            // cre_date_text
             // 
-            this.textBox5.Location = new System.Drawing.Point(295, 9);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(135, 21);
-            this.textBox5.TabIndex = 16;
+            this.cre_date_text.Location = new System.Drawing.Point(295, 9);
+            this.cre_date_text.Name = "cre_date_text";
+            this.cre_date_text.Size = new System.Drawing.Size(135, 21);
+            this.cre_date_text.TabIndex = 16;
             // 
-            // textBox4
+            // user_cust_id_text
             // 
-            this.textBox4.Location = new System.Drawing.Point(80, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 21);
-            this.textBox4.TabIndex = 15;
+            this.user_cust_id_text.Location = new System.Drawing.Point(80, 107);
+            this.user_cust_id_text.Name = "user_cust_id_text";
+            this.user_cust_id_text.Size = new System.Drawing.Size(135, 21);
+            this.user_cust_id_text.TabIndex = 15;
             // 
-            // textBox3
+            // user_psd_text
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 21);
-            this.textBox3.TabIndex = 14;
+            this.user_psd_text.Location = new System.Drawing.Point(80, 70);
+            this.user_psd_text.Name = "user_psd_text";
+            this.user_psd_text.Size = new System.Drawing.Size(135, 21);
+            this.user_psd_text.TabIndex = 14;
             // 
-            // textBox2
+            // user_name_text
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 21);
-            this.textBox2.TabIndex = 13;
+            this.user_name_text.Location = new System.Drawing.Point(80, 39);
+            this.user_name_text.Name = "user_name_text";
+            this.user_name_text.Size = new System.Drawing.Size(135, 21);
+            this.user_name_text.TabIndex = 13;
             // 
-            // textBox1
+            // user_id_text
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 21);
-            this.textBox1.TabIndex = 12;
+            this.user_id_text.Location = new System.Drawing.Point(80, 9);
+            this.user_id_text.Name = "user_id_text";
+            this.user_id_text.Size = new System.Drawing.Size(135, 21);
+            this.user_id_text.TabIndex = 12;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(474, 49);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 12);
+            this.label10.Size = new System.Drawing.Size(41, 12);
             this.label10.TabIndex = 11;
-            this.label10.Text = "label10";
+            this.label10.Text = "영업소";
             // 
             // label9
             // 
@@ -352,7 +354,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(315, 104);
+            this.button2.Location = new System.Drawing.Point(315, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 33);
             this.button2.TabIndex = 3;
@@ -432,11 +434,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Id_dataGridView1);
+            this.Controls.Add(this.SELECT_ALL_BUTTON);
             this.Name = "IdManage";
             this.Text = "IdManage";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.IaManage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Id_dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -448,20 +451,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button SELECT_ALL_BUTTON;
+        private System.Windows.Forms.DataGridView Id_dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rmk_text;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox user_braid_text;
+        private System.Windows.Forms.TextBox user_per_text;
+        private System.Windows.Forms.TextBox end_date_text;
+        private System.Windows.Forms.TextBox edit_date_text;
+        private System.Windows.Forms.TextBox cre_date_text;
+        private System.Windows.Forms.TextBox user_cust_id_text;
+        private System.Windows.Forms.TextBox user_psd_text;
+        private System.Windows.Forms.TextBox user_name_text;
+        private System.Windows.Forms.TextBox user_id_text;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
