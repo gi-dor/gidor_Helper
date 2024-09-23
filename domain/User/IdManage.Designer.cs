@@ -30,6 +30,15 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.USER_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USER_NAME_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSD_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUST_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BRA_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USER_PER_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CRE_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EDIT_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.END_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -54,21 +63,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.USER_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USER_NAME_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PSD_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUST_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BRA_ID_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USER_PER_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CRE_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EDIT_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.END_DATE_IDMANAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,6 +104,51 @@
             this.dataGridView1.Size = new System.Drawing.Size(1283, 383);
             this.dataGridView1.TabIndex = 1;
             // 
+            // USER_ID_IDMANAGE
+            // 
+            this.USER_ID_IDMANAGE.HeaderText = "사용자 ID";
+            this.USER_ID_IDMANAGE.Name = "USER_ID_IDMANAGE";
+            // 
+            // USER_NAME_IDMANAGE
+            // 
+            this.USER_NAME_IDMANAGE.HeaderText = "사용자";
+            this.USER_NAME_IDMANAGE.Name = "USER_NAME_IDMANAGE";
+            // 
+            // PSD_IDMANAGE
+            // 
+            this.PSD_IDMANAGE.HeaderText = "비밀번호";
+            this.PSD_IDMANAGE.Name = "PSD_IDMANAGE";
+            // 
+            // CUST_ID_IDMANAGE
+            // 
+            this.CUST_ID_IDMANAGE.HeaderText = "거래처";
+            this.CUST_ID_IDMANAGE.Name = "CUST_ID_IDMANAGE";
+            // 
+            // BRA_ID_IDMANAGE
+            // 
+            this.BRA_ID_IDMANAGE.HeaderText = "영업소";
+            this.BRA_ID_IDMANAGE.Name = "BRA_ID_IDMANAGE";
+            // 
+            // USER_PER_IDMANAGE
+            // 
+            this.USER_PER_IDMANAGE.HeaderText = "사용자 권한";
+            this.USER_PER_IDMANAGE.Name = "USER_PER_IDMANAGE";
+            // 
+            // CRE_DATE_IDMANAGE
+            // 
+            this.CRE_DATE_IDMANAGE.HeaderText = "생성일자";
+            this.CRE_DATE_IDMANAGE.Name = "CRE_DATE_IDMANAGE";
+            // 
+            // EDIT_DATE_IDMANAGE
+            // 
+            this.EDIT_DATE_IDMANAGE.HeaderText = "변경일자";
+            this.EDIT_DATE_IDMANAGE.Name = "EDIT_DATE_IDMANAGE";
+            // 
+            // END_DATE_IDMANAGE
+            // 
+            this.END_DATE_IDMANAGE.HeaderText = "종료일자";
+            this.END_DATE_IDMANAGE.Name = "END_DATE_IDMANAGE";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -128,7 +173,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 539);
+            this.panel1.Location = new System.Drawing.Point(12, 529);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 140);
             this.panel1.TabIndex = 2;
@@ -253,7 +298,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(234, 12);
+            this.label6.Location = new System.Drawing.Point(236, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 7;
@@ -299,7 +344,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 520);
+            this.label1.Location = new System.Drawing.Point(12, 510);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 0;
@@ -307,7 +352,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(312, 76);
+            this.button2.Location = new System.Drawing.Point(315, 104);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 33);
             this.button2.TabIndex = 3;
@@ -325,28 +370,31 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(810, 402);
+            this.panel2.Location = new System.Drawing.Point(810, 391);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 114);
+            this.panel2.Size = new System.Drawing.Size(482, 132);
             this.panel2.TabIndex = 4;
             // 
-            // label12
+            // textBox12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 12);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "거래처 명";
+            this.textBox12.Location = new System.Drawing.Point(99, 88);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(159, 21);
+            this.textBox12.TabIndex = 6;
             // 
-            // label13
+            // textBox11
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 51);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 12);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "사용자 이름";
+            this.textBox11.Location = new System.Drawing.Point(99, 51);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(159, 21);
+            this.textBox11.TabIndex = 5;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(99, 10);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(159, 21);
+            this.textBox10.TabIndex = 4;
             // 
             // label14
             // 
@@ -357,71 +405,23 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "사용자 ID";
             // 
-            // textBox10
+            // label13
             // 
-            this.textBox10.Location = new System.Drawing.Point(99, 10);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(159, 21);
-            this.textBox10.TabIndex = 4;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 51);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 12);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "사용자 이름";
             // 
-            // textBox11
+            // label12
             // 
-            this.textBox11.Location = new System.Drawing.Point(99, 51);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(159, 21);
-            this.textBox11.TabIndex = 5;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(99, 88);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(159, 21);
-            this.textBox12.TabIndex = 6;
-            // 
-            // USER_ID_IDMANAGE
-            // 
-            this.USER_ID_IDMANAGE.HeaderText = "사용자 ID";
-            this.USER_ID_IDMANAGE.Name = "USER_ID_IDMANAGE";
-            // 
-            // USER_NAME_IDMANAGE
-            // 
-            this.USER_NAME_IDMANAGE.HeaderText = "사용자";
-            this.USER_NAME_IDMANAGE.Name = "USER_NAME_IDMANAGE";
-            // 
-            // PSD_IDMANAGE
-            // 
-            this.PSD_IDMANAGE.HeaderText = "비밀번호";
-            this.PSD_IDMANAGE.Name = "PSD_IDMANAGE";
-            // 
-            // CUST_ID_IDMANAGE
-            // 
-            this.CUST_ID_IDMANAGE.HeaderText = "거래처";
-            this.CUST_ID_IDMANAGE.Name = "CUST_ID_IDMANAGE";
-            // 
-            // BRA_ID_IDMANAGE
-            // 
-            this.BRA_ID_IDMANAGE.HeaderText = "영업소";
-            this.BRA_ID_IDMANAGE.Name = "BRA_ID_IDMANAGE";
-            // 
-            // USER_PER_IDMANAGE
-            // 
-            this.USER_PER_IDMANAGE.HeaderText = "사용자 권한";
-            this.USER_PER_IDMANAGE.Name = "USER_PER_IDMANAGE";
-            // 
-            // CRE_DATE_IDMANAGE
-            // 
-            this.CRE_DATE_IDMANAGE.HeaderText = "생성일자";
-            this.CRE_DATE_IDMANAGE.Name = "CRE_DATE_IDMANAGE";
-            // 
-            // EDIT_DATE_IDMANAGE
-            // 
-            this.EDIT_DATE_IDMANAGE.HeaderText = "변경일자";
-            this.EDIT_DATE_IDMANAGE.Name = "EDIT_DATE_IDMANAGE";
-            // 
-            // END_DATE_IDMANAGE
-            // 
-            this.END_DATE_IDMANAGE.HeaderText = "종료일자";
-            this.END_DATE_IDMANAGE.Name = "END_DATE_IDMANAGE";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 12);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "거래처 명";
             // 
             // IdManage
             // 
