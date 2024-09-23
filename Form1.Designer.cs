@@ -315,12 +315,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(14, 86);
+            this.label5.Location = new System.Drawing.Point(4, 86);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "아이디 관리";
+            this.label5.Text = "물류 아이디 관리";
             // 
             // new_404user
             // 
@@ -432,8 +432,7 @@
             // 
             // mainPage
             // 
-            this.mainPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.mainPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainPage.ForeColor = System.Drawing.SystemColors.ControlText;
