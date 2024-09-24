@@ -45,8 +45,8 @@ namespace gidor_Helper
             }
         }
 
-        // 전체 조회
 
+        // 전체 조회
         private void CodeManageButton_Click(object sender, EventArgs e)
         {
             try
@@ -91,6 +91,7 @@ namespace gidor_Helper
         }
 
 
+
         // 특정 조건에 맞게 검색
         private void CodeSelectButton_Click(object sender, EventArgs e)
         {
@@ -107,7 +108,52 @@ namespace gidor_Helper
                                   " TRS_DATE    AS '작성 일자'" +
                                   "FROM SLIS_MASTER.dbo.LS901T0 ";
                                   
+               
 
+                if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox2.Text) ||
+                    !String.IsNullOrEmpty(textBox3.Text) || !String.IsNullOrEmpty(textBox4.Text))
+                {
+                    sqlQuery += " WHERE ";
+
+                    if(!String.IsNullOrEmpty(textBox1.Text))
+                    {
+                        sqlQuery += $" COD LIKE '%{textBox1.Text}%' ";
+                    }
+
+                    if(!String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if(!String.IsNullOrEmpty(textBox1.Text))
+                        {
+                            sqlQuery += " AND ";
+                        }
+                        sqlQuery += $" COD_CONT LIKE '%{textBox2.Text}%' ";
+                    }
+
+                    if (!String.IsNullOrEmpty(textBox3.Text))
+                    {
+                        if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox1.Text))
+                        {
+                            sqlQuery += " AND ";
+                        }
+                        sqlQuery += $" COD_SLT LIKE '%{textBox3.Text}%' ";
+                    }
+
+                    if(!String.IsNullOrEmpty(textBox4.Text))
+                    {
+                        if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            sqlQuery += " AND ";
+                        }
+                        sqlQuery += $" CRE_DATE LIKE '%{textBox4.Text}%' ";
+                    }
+                }
+
+                sqlQuery += " ORDER BY COD ASC";
+
+
+
+                // ************************************************   구버전 *****************************************
+                /*
                 // WHERE 절을 담을 리스트
                 List<string> where = new List<string>();
 
@@ -146,10 +192,11 @@ namespace gidor_Helper
                 {
                     sqlQuery += " WHERE " + string.Join(" OR ", where);
                 }
+                
+                */
 
 
-
-                using (SqlConnection conn =  new SqlConnection(DB_Connect.conStr))
+                using (SqlConnection conn =  new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
 
