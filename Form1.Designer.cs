@@ -120,7 +120,7 @@
             this.inv.Size = new System.Drawing.Size(182, 34);
             this.inv.TabIndex = 8;
             this.inv.MouseLeave += new System.EventHandler(this.inv_Pannel_Leave);
-            this.inv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Hover);
+            this.inv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Move);
             // 
             // pictureBox4
             // 
@@ -133,7 +133,7 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.MouseLeave += new System.EventHandler(this.inv_Pic_Leave);
-            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Hover);
+            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Move);
             // 
             // label15
             // 

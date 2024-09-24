@@ -116,30 +116,6 @@ namespace gidor_Helper
             system_user.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void inv_Pannel_Leave(object sender, EventArgs e)
-        {
-            inv.BackColor = SystemColors.ControlLightLight;
-            inv.BorderStyle = BorderStyle.None;
-        }
-
-        private void inv_Pannel_Hover(object sender, MouseEventArgs e)
-        {
-            inv.BackColor = Color.LightBlue;
-            inv.BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void inv_Pic_Leave(object sender, EventArgs e)
-        {
-            inv.BackColor = Color.LightBlue;
-            inv.BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void inv_Pic_Hover(object sender, MouseEventArgs e)
-        {
-            inv.BackColor = SystemColors.ControlLightLight;
-            inv.BorderStyle = BorderStyle.None;
-        }
-
         private void b2b_user_system_Pannel_Leave(object sender, EventArgs e)
         {
             b2b_user_system.BackColor = SystemColors.ControlLightLight;
@@ -235,6 +211,31 @@ namespace gidor_Helper
             new_902user.BorderStyle = BorderStyle.FixedSingle;
         }
 
+        private void inv_Pannel_Leave(object sender, EventArgs e)
+        {
+            inv.BackColor = SystemColors.ControlLightLight;
+            inv.BorderStyle = BorderStyle.None;
+        }
+
+        private void inv_Pannel_Move(object sender, MouseEventArgs e)
+        {
+            inv.BackColor = Color.LightBlue;
+            inv.BorderStyle = BorderStyle.FixedSingle;
+        }
+     
+
+        private void inv_Pic_Leave(object sender, EventArgs e)
+        {
+            inv.BackColor = SystemColors.ControlLightLight;
+            inv.BorderStyle = BorderStyle.None;
+        }
+
+   
+        private void inv_Pic_Move(object sender, MouseEventArgs e)
+        {
+            inv.BackColor = Color.LightBlue;
+            inv.BorderStyle = BorderStyle.FixedSingle;
+        }
         // 버튼 Hover 종료 
 
 
