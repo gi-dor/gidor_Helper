@@ -29,10 +29,10 @@ namespace gidor_Helper
                 // 만약 dispose() , close() , using() {} 을 사용하지 않는다면 메모리 누수 현상이 발생한다고 한다
 
                 // DB_Connect 클래스에있는 conStrt을 가져와 사용한다
-                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
-                {
+                using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect())) { 
+
                     conn.Open();
-                    MessageBox.Show("Success , DB 연결 되었습니다  ", "DB 연결메세지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Success , DB 연결 되었습니다 \r\n{DB_Info.Get91PortConnect()} ", "DB 연결 성공 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // 해당 컬럼의 ReadOnly 속성 true 
                     cod_dataGridView1.ReadOnly = true;
@@ -52,18 +52,18 @@ namespace gidor_Helper
             try
             {
                 String sqlQuery = " SELECT " +
-                                  "     COD_NO          , " +
-                                  "     COD             , " +
-                                  "     COD_CONT        , " +
-                                  "     COD_SLT         , " +
-                                  "     CREATED_DATE    , " +
-                                  "     END_DATE        , " +
-                                  "     TRS_ID          , " +
-                                  "     TRS_NAME        , " +
-                                  "     TRS_DATE " +
-                                  "FROM dbo.COD order by COD_NO ASC";
+                                  " COD         AS '코드', " +
+                                  " COD_CONT    AS '코드 내용' , " +
+                                  " COD_SLT     AS '코드 구분' , " +
+                                  " CRE_DATE    AS '생성 일자' , " +
+                                  " END_DATE    AS '종료 일자' , " +
+                                  " TRS_ID      AS '작성자 ID' , " +
+                                  " TRS_NAME    AS '작성자 명' , " +
+                                  " TRS_DATE    AS '작성 일자'" +
+                                  "FROM SLIS_MASTER.dbo.LS901T0 " +
+                                  "order by COD ASC";
 
-                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
 
@@ -97,16 +97,16 @@ namespace gidor_Helper
             try
             {
                 String sqlQuery = " SELECT " +
-                                  "     COD_NO, " +
-                                  "     COD , " +
-                                  "     COD_CONT        , " +
-                                  "     COD_SLT         , " +
-                                  "     CREATED_DATE    , " +
-                                  "     END_DATE , " +
-                                  "     TRS_ID , " +
-                                  "     TRS_NAME , " +
-                                  "     TRS_DATE " +
-                                  "FROM dbo.COD";
+                                  " COD         AS '코드', " +
+                                  " COD_CONT    AS '코드 내용' , " +
+                                  " COD_SLT     AS '코드 구분' , " +
+                                  " CRE_DATE    AS '생성 일자' , " +
+                                  " END_DATE    AS '종료 일자' , " +
+                                  " TRS_ID      AS '작성자 ID' , " +
+                                  " TRS_NAME    AS '작성자 명' , " +
+                                  " TRS_DATE    AS '작성 일자'" +
+                                  "FROM SLIS_MASTER.dbo.LS901T0 ";
+                                  
 
                 // WHERE 절을 담을 리스트
                 List<string> where = new List<string>();
@@ -201,11 +201,11 @@ namespace gidor_Helper
                 // 특정 컬럼에 대해 명시적으로 "COD" 으로 표현 할수 있으며 INDEX를 통해 설정 할수도 있다
 
                 // String sqlQery 에서 AS 를 사용한다면 컬럼을 명시적으로 표현하지말고 INDEX를 통해 설정해야한다
-                cod_textBox.Text = row.Cells["COD"].Value.ToString();
-                codCont_textBox.Text = row.Cells[2].Value.ToString();
-                creDate_textBox.Text = row.Cells[4].Value.ToString();
-                endDate_textBox.Text = row.Cells["END_DATE"].Value.ToString();
-                codSlt_textBox.Text = row.Cells["COD_SLT"].Value.ToString();
+                cod_textBox.Text = row.Cells[0].Value.ToString();
+                codCont_textBox.Text = row.Cells[1].Value.ToString();
+                codSlt_textBox.Text = row.Cells[2].Value.ToString();
+                creDate_textBox.Text = row.Cells[3].Value.ToString();
+                endDate_textBox.Text = row.Cells[4].Value.ToString();
 
 
             }

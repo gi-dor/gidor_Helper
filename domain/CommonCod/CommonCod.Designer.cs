@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.cod_dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.COD_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_CONT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_SLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.END_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodeManageButton = new System.Windows.Forms.Button();
             this.count_value = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Label();
@@ -62,6 +53,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.COD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_CONT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_SLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.END_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cod_dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,7 +72,6 @@
             this.cod_dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.cod_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cod_dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.COD_NO,
             this.COD,
             this.COD_CONT,
             this.COD_SLT,
@@ -90,60 +88,6 @@
             this.cod_dataGridView1.Size = new System.Drawing.Size(963, 478);
             this.cod_dataGridView1.TabIndex = 3;
             this.cod_dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Row_Click_Detail);
-            // 
-            // COD_NO
-            // 
-            this.COD_NO.HeaderText = "COD_NO";
-            this.COD_NO.Name = "COD_NO";
-            this.COD_NO.ReadOnly = true;
-            // 
-            // COD
-            // 
-            this.COD.HeaderText = "COD";
-            this.COD.Name = "COD";
-            this.COD.ReadOnly = true;
-            // 
-            // COD_CONT
-            // 
-            this.COD_CONT.HeaderText = "COD_CONT";
-            this.COD_CONT.Name = "COD_CONT";
-            this.COD_CONT.ReadOnly = true;
-            // 
-            // COD_SLT
-            // 
-            this.COD_SLT.HeaderText = "COD_SLT";
-            this.COD_SLT.Name = "COD_SLT";
-            this.COD_SLT.ReadOnly = true;
-            // 
-            // CREATED_DATE
-            // 
-            this.CREATED_DATE.HeaderText = "CREATED_DATE";
-            this.CREATED_DATE.Name = "CREATED_DATE";
-            this.CREATED_DATE.ReadOnly = true;
-            // 
-            // END_DATE
-            // 
-            this.END_DATE.HeaderText = "END_DATE";
-            this.END_DATE.Name = "END_DATE";
-            this.END_DATE.ReadOnly = true;
-            // 
-            // TRS_ID
-            // 
-            this.TRS_ID.HeaderText = "TRS_ID";
-            this.TRS_ID.Name = "TRS_ID";
-            this.TRS_ID.ReadOnly = true;
-            // 
-            // TRS_NAME
-            // 
-            this.TRS_NAME.HeaderText = "TRS_NAME";
-            this.TRS_NAME.Name = "TRS_NAME";
-            this.TRS_NAME.ReadOnly = true;
-            // 
-            // TRS_DATE
-            // 
-            this.TRS_DATE.HeaderText = "TRS_DATE";
-            this.TRS_DATE.Name = "TRS_DATE";
-            this.TRS_DATE.ReadOnly = true;
             // 
             // CodeManageButton
             // 
@@ -373,6 +317,54 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "코드";
             // 
+            // COD
+            // 
+            this.COD.HeaderText = "COD";
+            this.COD.Name = "COD";
+            this.COD.ReadOnly = true;
+            // 
+            // COD_CONT
+            // 
+            this.COD_CONT.HeaderText = "COD_CONT";
+            this.COD_CONT.Name = "COD_CONT";
+            this.COD_CONT.ReadOnly = true;
+            // 
+            // COD_SLT
+            // 
+            this.COD_SLT.HeaderText = "COD_SLT";
+            this.COD_SLT.Name = "COD_SLT";
+            this.COD_SLT.ReadOnly = true;
+            // 
+            // CREATED_DATE
+            // 
+            this.CREATED_DATE.HeaderText = "CRE_DATE";
+            this.CREATED_DATE.Name = "CREATED_DATE";
+            this.CREATED_DATE.ReadOnly = true;
+            // 
+            // END_DATE
+            // 
+            this.END_DATE.HeaderText = "END_DATE";
+            this.END_DATE.Name = "END_DATE";
+            this.END_DATE.ReadOnly = true;
+            // 
+            // TRS_ID
+            // 
+            this.TRS_ID.HeaderText = "TRS_ID";
+            this.TRS_ID.Name = "TRS_ID";
+            this.TRS_ID.ReadOnly = true;
+            // 
+            // TRS_NAME
+            // 
+            this.TRS_NAME.HeaderText = "TRS_NAME";
+            this.TRS_NAME.Name = "TRS_NAME";
+            this.TRS_NAME.ReadOnly = true;
+            // 
+            // TRS_DATE
+            // 
+            this.TRS_DATE.HeaderText = "TRS_DATE";
+            this.TRS_DATE.Name = "TRS_DATE";
+            this.TRS_DATE.ReadOnly = true;
+            // 
             // CommonCod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -400,15 +392,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView cod_dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD_CONT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD_SLT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CREATED_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn END_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_DATE;
         private System.Windows.Forms.Button CodeManageButton;
         private System.Windows.Forms.Label count_value;
         private System.Windows.Forms.Label count;
@@ -433,5 +416,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_CONT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_SLT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CREATED_DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn END_DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRS_DATE;
     }
 }
