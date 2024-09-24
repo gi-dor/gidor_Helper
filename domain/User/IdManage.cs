@@ -157,6 +157,11 @@ namespace gidor_Helper.domain.User
                 Boolean whereUsrId = !String.IsNullOrEmpty(USR_ID_LIKE.Text);
                 Boolean whereBraId = !String.IsNullOrEmpty(BRA_ID_TEXT.Text);
 
+                Boolean whereCustName2 = !String.IsNullOrWhiteSpace(CUST_NAME_LIKE.Text);
+                Boolean whereUsrName2 = !String.IsNullOrWhiteSpace(USR_NAME_LIKE.Text);
+                Boolean whereUsrId2 = !String.IsNullOrWhiteSpace(USR_ID_LIKE.Text);
+                Boolean whereBraId2 = !String.IsNullOrWhiteSpace(BRA_ID_TEXT.Text);
+
 
 
                 // 3번쨰 버전
