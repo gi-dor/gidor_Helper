@@ -55,3 +55,8 @@
 
 ## 🔥 개선사항 <a name="개선-사항"></a><br>
 
+
+### 반복되는 DB연결정보 함수화 [ [코드](https://github.com/gi-dor/gidor_Helper/blob/5a8ba8978fb544ba4382134dede21e15ef41b6e7/Util/DB_Info.cs#L12-L34) ]
+	
+	- 반복되어 사용되는 DB연결정보를 DB_Info 클래스를 생성해 해당 포트 연결에 맞게 DB설정 이후 메서드 호출로 사용
+	
