@@ -79,6 +79,7 @@
       <DependentUpon>UserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\DB_Connect.cs" />
+    <Compile Include="Util\DB_Info.cs" />
     <EmbeddedResource Include="domain\CommonCod\CommonCod.resx">
       <DependentUpon>CommonCod.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,13 +119,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="image\check.jpg" />
-    <Content Include="image\disk.jpg" />
-    <Content Include="image\doc.jpg" />
-    <Content Include="image\folder.jpg" />
-    <Content Include="image\tool.jpg" />
-    <Content Include="image\user.jpg" />
-    <Content Include="image\users.jpg" />
+    <Content Include="image\WEB접속관리 샘플.jpg" />
+    <Content Include="image\메인.jpg" />
+    <Content Include="image\물류아이디 관리.jpg" />
+    <Content Include="image\스캔관리 삭제.jpg" />
+    <Content Include="image\스캔관리 수정 .jpg" />
+    <Content Include="image\스캔관리 전체조회.jpg" />
+    <Content Include="image\스캔관리 조건검색.jpg" />
+    <Content Include="image\코드관리 전체조회.jpg" />
+    <Content Include="image\코드관리 조건검색.jpg" />
     <Content Include="project_image\code_manage_All.jpg" />
     <Content Include="project_image\code_manage_where.jpg" />
     <Content Include="project_image\cust_manage.jpg" />

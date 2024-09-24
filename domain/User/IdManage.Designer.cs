@@ -63,12 +63,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.USR_ID_LIKE = new System.Windows.Forms.TextBox();
+            this.USR_NAME_LIKE = new System.Windows.Forms.TextBox();
+            this.CUST_NAME_LIKE = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.rowCount = new System.Windows.Forms.Label();
+            this.BRA_ID_TEXT = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Id_dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -360,14 +364,17 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "조건 조회";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.WhereSelect_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.textBox11);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.BRA_ID_TEXT);
+            this.panel2.Controls.Add(this.USR_ID_LIKE);
+            this.panel2.Controls.Add(this.USR_NAME_LIKE);
+            this.panel2.Controls.Add(this.CUST_NAME_LIKE);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label13);
@@ -377,31 +384,31 @@
             this.panel2.Size = new System.Drawing.Size(482, 132);
             this.panel2.TabIndex = 4;
             // 
-            // textBox12
+            // USR_ID_LIKE
             // 
-            this.textBox12.Location = new System.Drawing.Point(99, 88);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(159, 21);
-            this.textBox12.TabIndex = 6;
+            this.USR_ID_LIKE.Location = new System.Drawing.Point(100, 64);
+            this.USR_ID_LIKE.Name = "USR_ID_LIKE";
+            this.USR_ID_LIKE.Size = new System.Drawing.Size(159, 21);
+            this.USR_ID_LIKE.TabIndex = 6;
             // 
-            // textBox11
+            // USR_NAME_LIKE
             // 
-            this.textBox11.Location = new System.Drawing.Point(99, 51);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(159, 21);
-            this.textBox11.TabIndex = 5;
+            this.USR_NAME_LIKE.Location = new System.Drawing.Point(99, 38);
+            this.USR_NAME_LIKE.Name = "USR_NAME_LIKE";
+            this.USR_NAME_LIKE.Size = new System.Drawing.Size(159, 21);
+            this.USR_NAME_LIKE.TabIndex = 5;
             // 
-            // textBox10
+            // CUST_NAME_LIKE
             // 
-            this.textBox10.Location = new System.Drawing.Point(99, 10);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(159, 21);
-            this.textBox10.TabIndex = 4;
+            this.CUST_NAME_LIKE.Location = new System.Drawing.Point(99, 10);
+            this.CUST_NAME_LIKE.Name = "CUST_NAME_LIKE";
+            this.CUST_NAME_LIKE.Size = new System.Drawing.Size(159, 21);
+            this.CUST_NAME_LIKE.TabIndex = 4;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 91);
+            this.label14.Location = new System.Drawing.Point(20, 67);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 12);
             this.label14.TabIndex = 2;
@@ -410,7 +417,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 51);
+            this.label13.Location = new System.Drawing.Point(19, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 12);
             this.label13.TabIndex = 1;
@@ -425,12 +432,48 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "거래처 명";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(635, 405);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "검색수 : ";
+            // 
+            // rowCount
+            // 
+            this.rowCount.AutoSize = true;
+            this.rowCount.Location = new System.Drawing.Point(699, 405);
+            this.rowCount.Name = "rowCount";
+            this.rowCount.Size = new System.Drawing.Size(69, 12);
+            this.rowCount.TabIndex = 6;
+            this.rowCount.Text = "                ";
+            // 
+            // BRA_ID_TEXT
+            // 
+            this.BRA_ID_TEXT.Location = new System.Drawing.Point(100, 94);
+            this.BRA_ID_TEXT.Name = "BRA_ID_TEXT";
+            this.BRA_ID_TEXT.Size = new System.Drawing.Size(159, 21);
+            this.BRA_ID_TEXT.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(20, 97);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 12);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "영업소";
+            // 
             // IdManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1307, 681);
+            this.Controls.Add(this.rowCount);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -489,8 +532,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CRE_DATE_IDMANAGE;
         private System.Windows.Forms.DataGridViewTextBoxColumn EDIT_DATE_IDMANAGE;
         private System.Windows.Forms.DataGridViewTextBoxColumn END_DATE_IDMANAGE;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox USR_ID_LIKE;
+        private System.Windows.Forms.TextBox USR_NAME_LIKE;
+        private System.Windows.Forms.TextBox CUST_NAME_LIKE;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label rowCount;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox BRA_ID_TEXT;
     }
 }
