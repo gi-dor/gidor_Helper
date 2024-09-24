@@ -107,40 +107,46 @@ namespace gidor_Helper
                                   " TRS_NAME    AS '작성자 명' , " +
                                   " TRS_DATE    AS '작성 일자'" +
                                   "FROM SLIS_MASTER.dbo.LS901T0 ";
-                                  
-               
 
-                if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox2.Text) ||
-                    !String.IsNullOrEmpty(textBox3.Text) || !String.IsNullOrEmpty(textBox4.Text))
-                {
+
+                Boolean cod = !String.IsNullOrEmpty(textBox1.Text);
+                Boolean cod_cont = !String.IsNullOrEmpty(textBox2.Text);
+                Boolean cod_slt = !String.IsNullOrEmpty(textBox3.Text);
+                Boolean cre_date = !String.IsNullOrEmpty(textBox4.Text);
+
+
+
+
+                if (cod ||cod_cont || cod_slt || cre_date) {
+
                     sqlQuery += " WHERE ";
 
-                    if(!String.IsNullOrEmpty(textBox1.Text))
+                    if(cod)
                     {
                         sqlQuery += $" COD LIKE '%{textBox1.Text}%' ";
                     }
 
-                    if(!String.IsNullOrEmpty(textBox2.Text))
+                    if(cod_cont)
                     {
-                        if(!String.IsNullOrEmpty(textBox1.Text))
+                        if(cod)
                         {
                             sqlQuery += " AND ";
                         }
                         sqlQuery += $" COD_CONT LIKE '%{textBox2.Text}%' ";
                     }
 
-                    if (!String.IsNullOrEmpty(textBox3.Text))
+                    if (cod_slt)
                     {
-                        if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox1.Text))
+                        if(cod || cod_cont)
                         {
                             sqlQuery += " AND ";
                         }
                         sqlQuery += $" COD_SLT LIKE '%{textBox3.Text}%' ";
                     }
 
-                    if(!String.IsNullOrEmpty(textBox4.Text))
+                    if(cre_date)
                     {
-                        if(!String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox1.Text) || !String.IsNullOrEmpty(textBox3.Text))
+                        if(cod || cod_cont || cod_slt)
                         {
                             sqlQuery += " AND ";
                         }
