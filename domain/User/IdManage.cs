@@ -164,7 +164,7 @@ namespace gidor_Helper.domain.User
 
 
 
-                // 3번쨰 버전
+                // 3번째 최종 Refactor
                 if (whereCustName || whereUsrName || whereUsrId || whereBraId)
                 {
                     sqlQuery += " WHERE ";
