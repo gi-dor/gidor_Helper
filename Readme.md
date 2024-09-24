@@ -50,13 +50,24 @@
 ## 💻 기능구현 <a name="기능-구현"></a>
 
 
+- 사용자 아이디 조회 , 부분조회
+- 공통코드 조회 , 부분조회 
+- 운송장 스캔 정보 조회 및 세부 정보 조회 , 수정 , 삭제 
 
 <br>
 
 ## 🔥 개선사항 <a name="개선-사항"></a><br>
 
 
-### 반복되는 DB연결정보 함수화 [ [코드](https://github.com/gi-dor/gidor_Helper/blob/5a8ba8978fb544ba4382134dede21e15ef41b6e7/Util/DB_Info.cs#L12-L34) ]
+### 반복되는 DB연결정보 함수화 
+
+- 반복되어 사용되는 DB연결정보를 DB_Info 클래스를 생성해 해당 포트 연결에 맞게 DB설정 이후 메서드 호출로 사용했습니다
+- [ [코드](https://github.com/gi-dor/gidor_Helper/blob/5a8ba8978fb544ba4382134dede21e15ef41b6e7/Util/DB_Info.cs#L12-L34) ]
 	
-	- 반복되어 사용되는 DB연결정보를 DB_Info 클래스를 생성해 해당 포트 연결에 맞게 DB설정 이후 메서드 호출로 사용
-	
+
+###  SQL 쿼리 구성 최적화
+
+- WHERE 절 구성을 위해 기존 리스트 사용을 제거하고, 조건을 직접 평가하는 방식으로 쿼리 생성 로직을 리팩토링을 진행했습니다
+- 여러 텍스트 박스 입력을 처리 할때 `Boolean` 변수에 담아 사용하여 코드의 가독성과 유지 보수성을 향상 시켰습니다
+- [ [변경전](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L286-L313) ]
+- [ [변경후](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L154-L222) ]
