@@ -29,6 +29,8 @@
 - [⚙ 기술 스택](#기술-스택)
 - [💻 기능 구현](#기능-구현)
 - [🔥 개선 사항](#개선-사항)
+- [📌 문제 해결](#문제-해결)
+
 <br>
 <br>
 
@@ -71,3 +73,51 @@
 - 여러 텍스트 박스 입력을 처리 할때 `Boolean` 변수에 담아 사용하여 코드의 가독성과 유지 보수성을 향상 시켰습니다
 - [ [변경전](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L286-L313) ]
 - [ [변경후](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L154-L222) ]
+
+
+
+## 📌 트러블슈팅<a name="트러블슈팅"></a>
+
+###  운송장상태 페이지 조회 SQL 쿼리 성능,기능문제
+
+- 상황 
+> MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 
+>`ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
+> 조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
+
+- 문제점
+> SCANN_TIME 컬럼에 대해 인덱스가 없으며 회사내에 데이터베이스이기에 함부로 인덱스를 추가 할수 없는 상황
+
+- 해결
+
+1. `SCANN_DATE DESC` 을 사용해 우선적으로 정렬후 C#의 DataView.Sort 메서드를 사용해 SCANN_TIME 기준으로 추가적인 정렬을 실행했습니다
+2. MSSQL에서 다룰수 없는 컬럼에 대한 데이터 정렬을 C# 코드에서 정렬하는 방법은 메모리에서 수행되는 정렬이기에 인덱스의 영향을 받지 않습니다
+3. 다만 , 메모리에서 불러오는 데이터가 많다면 프로그램에 성능에 영향을 줄수 있다 , 인덱스를 사용한 정렬하는것보다 성능이 떨어질 수 있습니다
+4. 인덱스를 추가할 수 없기에 C#에서 정렬한 방법은 덜 최적화된 방법이지만 데이터정렬을 위한 또다른 방법입니다
+
+```
+String sqlQuery = "SELECT top 100000 " +
+                    " A.INV_NO       as '송장번호'   ," +
+                    " A.BRA_ID       as '영업소'   , " +
+                    " A.SCANN_SLT    as '스캔 상태'   , " +
+                    " B.COD_CONT     as '코드 내용'   , " +
+                    " A.SCANN_DATE   as '스캔 일자'  , " +
+                    " A.SCANN_TIME   as '스캔 시간'   , " +
+                    " A.CAR_ID       as '배송 차량'   , " +
+                    " A.SCANN_USR_ID as '스캔 ID'   , " +
+                    " A.TRS_ID       as '처리자 ID'   , " +
+                    " A.TRS_NAME     as '처리자 명'   , " +
+                    " A.TRS_DATE     as '처리 일자'" +
+                    " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                    " INNER JOIN SLIS_MASTER.dbo.LS901T0 B " +
+                    " ON A.SCANN_SLT = B.COD " +
+                    " ORDER BY A.SCANN_DATE DESC ";
+
+
+                         ..... 생략       
+
+
+                    DataView dataView = dataTable.DefaultView;
+                    dataView.Sort = " 스캔 시간 DESC ";
+                    ScanDataGridView1.DataSource = dataView.ToTable();
+```
