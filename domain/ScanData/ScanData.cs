@@ -23,10 +23,10 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     conn.Open();
-                    MessageBox.Show("Success, DB 연결 되었습니다", "DB 연결 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Success , DB 연결 되었습니다 \r\n{DB_Info.Get91PortConnect()} ", "DB 연결 성공 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // 해당 컬럼의 ReadOnly 속성 true
                     ScanDataGridView1.ReadOnly = true;
@@ -47,24 +47,26 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
-                    String sqlQuery = "SELECT  " +
-                                            "A.INV_NO ,         " +
-                                            "A.BRA_ID ,         " +
-                                            "A.SCANN_SLT,       " +
-                                            "B.COD_CONT,        " +
-                                            "A.SCANN_DATE,      " +
-                                            "A.SCANN_TIME,      " +
-                                            "A.CAR_ID  ,        " +
-                                            "A.SCANN_USR_ID  ,  " +
-                                            "A.TRS_ID   ,       " +
-                                            "A.TRS_NAME ,       " +
-                                            "A.TRS_DATE " +
-                                         " FROM LS101T0 A " +
-                                         " INNER JOIN COD B " +
+                    String sqlQuery = "SELECT top 100000 " +
+                                            " A.INV_NO       as '송장번호'   ," +
+                                            " A.BRA_ID       as '영업소'   , " +
+                                            " A.SCANN_SLT    as '스캔 상태'   , " +
+                                            " B.COD_CONT     as '코드 내용'   , " +
+                                            " A.SCANN_DATE   as '스캔 일자'  , " +
+                                            " A.SCANN_TIME   as '스캔 시간'   , " +
+                                            " A.CAR_ID       as '배송 차량'   , " +
+                                            " A.SCANN_USR_ID as '스캔 ID'   , " +
+                                            " A.TRS_ID       as '처리자 ID'   , " +
+                                            " A.TRS_NAME     as '처리자 명'   , " +
+                                            " A.TRS_DATE     as '처리 일자'" +
+                                         " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                                         " INNER JOIN SLIS_MASTER.dbo.LS901T0 B " +
                                          " ON A.SCANN_SLT = B.COD " +
-                                         " ORDER BY A.SCANN_DATE , A.SCANN_TIME DESC";
+                                         " ORDER BY A.SCANN_DATE DESC ";
+                                         
+                                         
 
                     // SQL 쿼리를 실행시작 객체
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
@@ -74,14 +76,16 @@ namespace gidor_Helper.domain.ScanData
 
                     // 데이터 담기
                     DataTable dataTable = new DataTable();
-
                     dataAdapter.Fill(dataTable);
-
 
                     ScanDataGridView1.Columns.Clear();
 
                     int rowCount = dataTable.Rows.Count;
                     count_value.Text = $" {rowCount}";
+                    
+                    DataView dataView = dataTable.DefaultView;
+                    dataView.Sort = " 스캔 시간 DESC ";
+                    ScanDataGridView1.DataSource = dataView.ToTable();
 
                     ScanDataGridView1.DataSource = dataTable;
 
