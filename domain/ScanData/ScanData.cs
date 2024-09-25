@@ -192,6 +192,15 @@ namespace gidor_Helper.domain.ScanData
                 Boolean SCANN_DATE_A = !String.IsNullOrEmpty(textBox3.Text);
                 Boolean SCANN_DATE_B = !String.IsNullOrEmpty(textBox4.Text);
 
+
+                if (!(INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B))
+                {
+                    MessageBox.Show($"조건 조회를 위해 값을 입력해주세요 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // return 문을 추가해 기존에 조건값 없이 조회 실행시 실패 메시지 이후 전체 조회 되는 기능을 제어했다
+                    return;
+                }
+
                 String sqlQuery = "SELECT " +
                                         " A.INV_NO       as '송장번호'      ," +
                                         " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
@@ -206,14 +215,7 @@ namespace gidor_Helper.domain.ScanData
                                         " FROM SLIS_MASTER.dbo.LS101T0 A " +
                                         " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
                                         " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID ";
-                if (!(INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B))
-                {
-                    MessageBox.Show($"조건 조회를 위해 값을 입력해주세요 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    // return 문을 추가해 기존에 조건값 없이 조회 실행시 실패 메시지 이후 전체 조회 되는 기능을 제어했다
-                    return;
-                }
-
+            
                 if (INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B)
                     {
                         sqlQuery += " WHERE ";
@@ -236,7 +238,7 @@ namespace gidor_Helper.domain.ScanData
                             }
                             // 01 서울    BRA_ID = 003 터미널 
                             String braId = BRA_COMBO.Text.Substring(0,3);
-                            sqlQuery += $" A.BRA_ID = '%{braId}%' ";
+                            sqlQuery += $" A.BRA_ID = '{braId}' ";
                         }
                         
                         // SCANN_DATE_A컬럼의 입력값이 존재한다면 
@@ -265,12 +267,12 @@ namespace gidor_Helper.domain.ScanData
                             {
                                 MessageBox.Show($"날짜 A의 값이 필요합니다 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            
+                           
                         }
 
-                    return;
-         
-                    }
+                     
+
+                }
 
                 sqlQuery += " ORDER BY A.SCANN_DATE DESC";
 
