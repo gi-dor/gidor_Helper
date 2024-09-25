@@ -41,6 +41,7 @@
             this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BRA_COMBO = new System.Windows.Forms.ComboBox();
             this.SELECT_BUTTON = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ScanDataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -188,6 +188,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BRA_COMBO);
             this.panel1.Controls.Add(this.SELECT_BUTTON);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -195,12 +196,19 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(12, 407);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(406, 219);
             this.panel1.TabIndex = 1;
+            // 
+            // BRA_COMBO
+            // 
+            this.BRA_COMBO.FormattingEnabled = true;
+            this.BRA_COMBO.Location = new System.Drawing.Point(74, 64);
+            this.BRA_COMBO.Name = "BRA_COMBO";
+            this.BRA_COMBO.Size = new System.Drawing.Size(164, 20);
+            this.BRA_COMBO.TabIndex = 9;
             // 
             // SELECT_BUTTON
             // 
@@ -265,13 +273,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 21);
             this.textBox3.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(74, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 21);
-            this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -654,7 +655,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView ScanDataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -692,5 +692,6 @@
         private System.Windows.Forms.TextBox SCANN_USR_ID_TEXT;
         private System.Windows.Forms.TextBox SCANN_CAR_TEXT;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox BRA_COMBO;
     }
 }

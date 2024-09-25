@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
+                using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     conn.Open();
                     MessageBox.Show($"Success , DB 연결 되었습니다 \r\n{DB_Info.Get91PortConnect()} ", "DB 연결 성공 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -31,8 +32,25 @@ namespace gidor_Helper.domain.ScanData
                     // 해당 컬럼의 ReadOnly 속성 true
                     ScanDataGridView1.ReadOnly = true;
                     ScanDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                    String sqlQuery = "SELECT BRA_ID , BRA_NAME FROM SLIS_MASTER.dbo.LS801T0 ";
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            /*
+                            BRA_COMBO.Items.Add(reader["BRA_ID"]);
+                            BRA_COMBO.Items.Add(reader["BRA_NAME"]);
+                            */
+                            // BRA_COMBO.Items.Add(reader["BRA_ID"], reader["BRA_NAME"]);
+                            // BRA_COMBO.Items.Add(reader["BRA_ID"] ,  reader["BRA_NAME"] );
+                            BRA_COMBO.Items.Add($"{reader["BRA_ID"]} {reader["BRA_NAME"]}");
+                        }
+                    }
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"DB 연결 실패 \r\n Error: {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -49,24 +67,21 @@ namespace gidor_Helper.domain.ScanData
             {
                 using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
-                    String sqlQuery = "SELECT top 100000 " +
-                                            " A.INV_NO       as '송장번호'   ," +
-                                            " A.BRA_ID       as '영업소'   , " +
-                                            " A.SCANN_SLT    as '스캔 상태'   , " +
-                                            " B.COD_CONT     as '코드 내용'   , " +
-                                            " A.SCANN_DATE   as '스캔 일자'  , " +
-                                            " A.SCANN_TIME   as '스캔 시간'   , " +
-                                            " A.CAR_ID       as '배송 차량'   , " +
-                                            " A.SCANN_USR_ID as '스캔 ID'   , " +
-                                            " A.TRS_ID       as '처리자 ID'   , " +
-                                            " A.TRS_NAME     as '처리자 명'   , " +
-                                            " A.TRS_DATE     as '처리 일자'" +
-                                         " FROM SLIS_MASTER.dbo.LS101T0 A " +
-                                         " INNER JOIN SLIS_MASTER.dbo.LS901T0 B " +
-                                         " ON A.SCANN_SLT = B.COD " +
+                    String sqlQuery = "SELECT top 5000 " +
+                                            " A.INV_NO       as '송장번호'      ," +
+                                            " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
+                                            " A.SCANN_SLT + ' ' + B.COD_CONT    as '스캔 상태'   , " +
+                                            " A.SCANN_DATE   as '스캔 일자'     , " +
+                                            " A.SCANN_TIME   as '스캔 시간'     , " +
+                                            " A.CAR_ID       as '배송 차량'     , " +
+                                            " A.SCANN_USR_ID as '스캔 ID'       , " +
+                                            " A.TRS_ID       as '처리자 ID'     , " +
+                                            " A.TRS_NAME     as '처리자 명'     , " +
+                                            " A.TRS_DATE     as '처리 일자'       " +
+                                          " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                                          " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
+                                          " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID " +
                                          " ORDER BY A.SCANN_DATE DESC ";
-                                         
-                                         
 
                     // SQL 쿼리를 실행시작 객체
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
@@ -112,27 +127,25 @@ namespace gidor_Helper.domain.ScanData
             {
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                    using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                     {
                         // 선택된 행의 0번째 컬럼으로 지정을해야 INV_NO 송장에 대한 값을 사용
                         String selectColumn = ScanDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                         String sqlQuery = "SELECT " +
-                                            " A.INV_NO          , " +
-                                            " A.BRA_ID          ,  " +
-                                            " A.SCANN_SLT       , " +
-                                            " B.COD_CONT        , " +
-                                            " A.SCANN_DATE      , " +
-                                            " A.SCANN_TIME      , " +
-                                            " A.CAR_ID          , " +
-                                            " A.SCANN_USR_ID    , " +
-                                            " A.HTT_ID          ," +
-                                            " A.TRS_ID          ,  " +
-                                            " A.TRS_NAME        , " +
-                                            " A.TRS_DATE " +
-                                            " FROM LS101T0 A " +
-                                            " INNER JOIN COD B " +
-                                            " ON A.SCANN_SLT = B.COD " +
+                                            " A.INV_NO       as '송장번호'      ," +
+                                            " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
+                                            " A.SCANN_SLT + ' ' + B.COD_CONT   as '스캔 상태'   , " +
+                                            " A.SCANN_DATE   as '스캔 일자'     , " +
+                                            " A.SCANN_TIME   as '스캔 시간'     , " +
+                                            " A.CAR_ID       as '배송 차량'     , " +
+                                            " A.SCANN_USR_ID as '스캔 ID'       , " +
+                                            " A.TRS_ID       as '처리자 ID'     , " +
+                                            " A.TRS_NAME     as '처리자 명'     , " +
+                                            " A.TRS_DATE     as '처리 일자'        " +
+                                            " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                                            " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
+                                            " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID " +
                                             $" WHERE INV_NO = '{selectColumn}' " +
                                             $" ORDER BY A.SCANN_DATE , A.SCANN_TIME ASC" ;
 
@@ -174,78 +187,95 @@ namespace gidor_Helper.domain.ScanData
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(textBox1.Text) || !String.IsNullOrWhiteSpace(textBox2.Text) || !String.IsNullOrWhiteSpace(textBox3.Text) || !String.IsNullOrWhiteSpace(textBox4.Text))
-                {
+                Boolean INV_NO = !String.IsNullOrEmpty(textBox1.Text);
+                Boolean BRA_ID = !String.IsNullOrEmpty(BRA_COMBO.Text);
+                Boolean SCANN_DATE_A = !String.IsNullOrEmpty(textBox3.Text);
+                Boolean SCANN_DATE_B = !String.IsNullOrEmpty(textBox4.Text);
 
-                } else
+                String sqlQuery = "SELECT " +
+                                        " A.INV_NO       as '송장번호'      ," +
+                                        " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
+                                        " A.SCANN_SLT + ' ' + B.COD_CONT    as '스캔 상태'   , " +
+                                        " A.SCANN_DATE   as '스캔 일자'     , " +
+                                        " A.SCANN_TIME   as '스캔 시간'     , " +
+                                        " A.CAR_ID       as '배송 차량'     , " +
+                                        " A.SCANN_USR_ID as '스캔 ID'       , " +
+                                        " A.TRS_ID       as '처리자 ID'     , " +
+                                        " A.TRS_NAME     as '처리자 명'     , " +
+                                        " A.TRS_DATE     as '처리 일자'        " +
+                                        " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                                        " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
+                                        " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID ";
+                if (!(INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B))
                 {
                     MessageBox.Show($"조건 조회를 위해 값을 입력해주세요 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                     // return 문을 추가해 기존에 조건값 없이 조회 실행시 실패 메시지 이후 전체 조회 되는 기능을 제어했다
                     return;
                 }
-                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
-                {
-                    String sqlQuery = "SELECT  " +
-                                            "A.INV_NO ,         " +
-                                            "A.BRA_ID ,         " +
-                                            "A.SCANN_SLT,        " +
-                                            "B.COD_CONT ,       " +
-                                            "A.SCANN_DATE,      " +
-                                            "A.SCANN_TIME,      " +
-                                            "A.CAR_ID  ,        " +
-                                            "A.SCANN_USR_ID  ,  " +
-                                            "A.HTT_ID   ,       " +
-                                            "A.TRS_ID   ,       " +
-                                            "A.TRS_NAME ,       " +
-                                            "A.TRS_DATE         " +
-                                         " FROM LS101T0 A " +
-                                         " INNER JOIN COD B " +
-                                         " ON A.SCANN_SLT = B.COD " ;
 
-                    List<string> where = new List<string>();
-
-                   
-
-                    if (!String.IsNullOrWhiteSpace(textBox1.Text))
+                if (INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B)
                     {
-                        where.Add($"INV_NO LIKE '%{textBox1.Text}%'");
-                    }
+                        sqlQuery += " WHERE ";
 
-                    if (!String.IsNullOrWhiteSpace(textBox2.Text))
-                    {
-                        where.Add($"BRA_ID LIKE '%{textBox2.Text}%'");
-                    }
+                        //  INV_NO 컬럼이 존재한다면 최종 쿼리는 WHERE A.INV_NO LIKE '%  입력값   %'
+                        if(INV_NO)
+                        {
+                            //sqlQuery += $" A.INV_NO LIKE '%{textBox1.Text}%' ";
+                            sqlQuery += $" A.INV_NO = '{textBox1.Text}' ";
+                        }
+                        
+                        // BRA_NAME 컬럼의 값이 존재한다면  
+                        // 1. INV_NO가 존재한다면 앞에 if문에서 WHERE A.INV_NO LIKE '%입력값%' 이 이미 존재하므로 AND를 붙이고 남은 if문 수행
+                        // 2. WHERE A.INV_NO LIKE '%입력값%' AND B.COD_LIKE '%입력값%'
+                        if(BRA_ID)
+                        {
+                            if (INV_NO)
+                            {
+                                sqlQuery += " AND ";
+                            }
+                            // 01 서울    BRA_ID = 003 터미널 
+                            String braId = BRA_COMBO.Text.Substring(0,3);
+                            sqlQuery += $" A.BRA_ID = '%{braId}%' ";
+                        }
+                        
+                        // SCANN_DATE_A컬럼의 입력값이 존재한다면 
+                        // INV_NO 또는 BRA_ID 컬럼에 대한 WHERE 쿼리가 존재하므로 
+                        // AND A.SCANN_DATE LIKE '%20240925%' 
+                        if(SCANN_DATE_A)
+                        {
+                            if(INV_NO || BRA_ID)
+                            {
+                                sqlQuery += " AND ";
+                            }
+                            sqlQuery += $" A.SCANN_DATE LIKE '%{textBox3.Text}%'";
+                        }
 
-                    /* 
-                     * 1. textBox3 와 textBox4 값 둘다 입력되었을 때는 Between A And B를 사용한다
-                       2. textBox3 값만 입력 할 때                  
-                       3. textBox4 값만 입력할 때 
-                    */
+                        // SCANN_DATE_B컬럼의 입력값이 존재한다면 
+                        // SCANN_DATE_A의 입력값이 존재한다면 WHERE A.SCANN_DATE BETWEEN '%입력값%' AND '%입력값%'
+                        // INV_NO 또는 BRA_ID 입력값이 존재하며 '그리고' SCANN_DATE_A의 입력값이 존재한다면
+                        // AND A.SCANN_DATE BETWEEN 'A' AND 'B'
 
-                    if (!String.IsNullOrWhiteSpace(textBox3.Text) && !String.IsNullOrWhiteSpace(textBox4.Text))
-                    {
-                        where.Add($"SCANN_DATE BETWEEN '{textBox3.Text}' AND '{textBox4.Text}'");
-                    } else if(!String.IsNullOrWhiteSpace(textBox3.Text) )
-                    {
-                        where.Add($"SCANN_DATE LIKE '%{textBox3.Text}%'");
-                    } else if (!String.IsNullOrWhiteSpace(textBox4.Text))
-                    {
-                        where.Add($"SCANN_DATE LIKE '%{textBox4.Text}%'");
-                    }
+                        if(SCANN_DATE_B)
+                        {
+                            if ((INV_NO || BRA_ID) && SCANN_DATE_A)
+                            {
+                                sqlQuery += $" AND  A.SCANN_DATE BETWEEN '%{textBox3.Text}%'  AND  '%{textBox4.Text}%' ";
+                            } else if ( (INV_NO || BRA_ID) && !SCANN_DATE_A)
+                            {
+                                MessageBox.Show($"날짜 A의 값이 필요합니다 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            
+                        }
 
+                    return;
          
-                   
-
-                    // WHERE 조건이 하나라도 있을 때만 추가
-                    if (where.Count > 0)
-                    {
-                        sqlQuery += " WHERE " + string.Join(" OR ", where);
                     }
 
-                    sqlQuery += " ORDER BY A.SCANN_DATE, A.SCANN_TIME ASC";
+                sqlQuery += " ORDER BY A.SCANN_DATE DESC";
 
-
+                using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
+                {
                     SqlCommand cmd = new SqlCommand(sqlQuery, conn);
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
 
@@ -258,7 +288,6 @@ namespace gidor_Helper.domain.ScanData
                     count_value.Text = $" {rowCount}";
 
                     ScanDataGridView1.DataSource = dataTable;
-
 
                     ScanDataGridView1.ReadOnly = true;
                     ScanDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
