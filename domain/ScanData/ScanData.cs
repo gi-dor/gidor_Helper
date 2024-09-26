@@ -69,15 +69,15 @@ namespace gidor_Helper.domain.ScanData
                 {
                     String sqlQuery = "SELECT top 5000 " +
                                             " A.INV_NO       as '송장번호'      ," +
-                                            " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
-                                            " A.SCANN_SLT + ' ' + B.COD_CONT    as '스캔 상태'   , " +
+                                            " A.BRA_ID + ' ' + C.BRA_NAME     as '영업소' , " +
+                                            " A.SCANN_SLT + ' ' + B.COD_CONT  as '스캔 상태'   , " +
                                             " A.SCANN_DATE   as '스캔 일자'     , " +
                                             " A.SCANN_TIME   as '스캔 시간'     , " +
                                             " A.CAR_ID       as '배송 차량'     , " +
                                             " A.SCANN_USR_ID as '스캔 ID'       , " +
                                             " A.TRS_ID       as '처리자 ID'     , " +
-                                            " A.TRS_NAME     as '처리자 명'     , " +
-                                            " A.TRS_DATE     as '처리 일자'       " +
+                                            " A.TRS_NAME    as '처리자 명'     , " +
+                                            " A.TRS_DATE    as '처리 일자'       " +
                                           " FROM SLIS_MASTER.dbo.LS101T0 A " +
                                           " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
                                           " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID " +
@@ -203,19 +203,20 @@ namespace gidor_Helper.domain.ScanData
 
                 String sqlQuery = "SELECT " +
                                         " A.INV_NO       as '송장번호'      ," +
-                                        " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
-                                        " A.SCANN_SLT + ' ' + B.COD_CONT    as '스캔 상태'   , " +
-                                        " A.SCANN_DATE   as '스캔 일자'     , " +
-                                        " A.SCANN_TIME   as '스캔 시간'     , " +
-                                        " A.CAR_ID       as '배송 차량'     , " +
-                                        " A.SCANN_USR_ID as '스캔 ID'       , " +
-                                        " A.TRS_ID       as '처리자 ID'     , " +
-                                        " A.TRS_NAME     as '처리자 명'     , " +
-                                        " A.TRS_DATE     as '처리 일자'        " +
-                                        " FROM SLIS_MASTER.dbo.LS101T0 A " +
-                                        " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
-                                        " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID ";
-            
+                                            " A.BRA_ID + ' ' + C.BRA_NAME      as '영업소' , " +
+                                            " A.SCANN_SLT + ' ' + B.COD_CONT   as '스캔 상태'   , " +
+                                            " A.SCANN_DATE   as '스캔 일자'     , " +
+                                            " A.SCANN_TIME   as '스캔 시간'     , " +
+                                            " A.CAR_ID       as '배송 차량'     , " +
+                                            " A.SCANN_USR_ID as '스캔 ID'       , " +
+                                            " A.TRS_ID       as '처리자 ID'     , " +
+                                            " A.TRS_NAME     as '처리자 명'     , " +
+                                            " A.TRS_DATE     as '처리 일자'       " +
+                                          " FROM SLIS_MASTER.dbo.LS101T0 A " +
+                                          " INNER JOIN SLIS_MASTER.dbo.LS901T0 B ON A.SCANN_SLT = B.COD  " +
+                                          " INNER JOIN SLIS_MASTER.dbo.LS801T0 C ON A.BRA_ID = C.BRA_ID ";
+                                        
+
                 if (INV_NO || BRA_ID || SCANN_DATE_A || SCANN_DATE_B)
                     {
                         sqlQuery += " WHERE ";
@@ -267,14 +268,11 @@ namespace gidor_Helper.domain.ScanData
                             {
                                 MessageBox.Show($"날짜 A의 값이 필요합니다 \r\n조건을 조회 하기위한  값이 입력되지 않았습니다", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                           
+                          
                         }
-
-                     
-
                 }
 
-                sqlQuery += " ORDER BY A.SCANN_DATE DESC";
+                sqlQuery += "ORDER BY A.SCANN_DATE ASC , A.SCANN_TIME ASC ";
 
                 using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
