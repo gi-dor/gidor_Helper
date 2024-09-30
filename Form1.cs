@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gidor_Helper.domain.manage;
 using gidor_Helper.domain.ScanData;
 using gidor_Helper.domain.User;
 
@@ -213,28 +214,28 @@ namespace gidor_Helper
 
         private void inv_Pannel_Leave(object sender, EventArgs e)
         {
-            inv.BackColor = SystemColors.ControlLightLight;
-            inv.BorderStyle = BorderStyle.None;
+            bra.BackColor = SystemColors.ControlLightLight;
+            bra.BorderStyle = BorderStyle.None;
         }
 
         private void inv_Pannel_Move(object sender, MouseEventArgs e)
         {
-            inv.BackColor = Color.LightBlue;
-            inv.BorderStyle = BorderStyle.FixedSingle;
+            bra.BackColor = Color.LightBlue;
+            bra.BorderStyle = BorderStyle.FixedSingle;
         }
      
 
         private void inv_Pic_Leave(object sender, EventArgs e)
         {
-            inv.BackColor = SystemColors.ControlLightLight;
-            inv.BorderStyle = BorderStyle.None;
+            bra.BackColor = SystemColors.ControlLightLight;
+            bra.BorderStyle = BorderStyle.None;
         }
 
    
         private void inv_Pic_Move(object sender, MouseEventArgs e)
         {
-            inv.BackColor = Color.LightBlue;
-            inv.BorderStyle = BorderStyle.FixedSingle;
+            bra.BackColor = Color.LightBlue;
+            bra.BorderStyle = BorderStyle.FixedSingle;
         }
         // 버튼 Hover 종료 
 
@@ -339,5 +340,26 @@ namespace gidor_Helper
             idManage.Show();
         }
 
+        private void BraManageClick(object sender, EventArgs e)
+        {
+            BraManage bra = new BraManage();
+            bra.TopLevel = false;
+            bra.FormBorderStyle = FormBorderStyle.None;
+            bra.Dock = DockStyle.Fill;
+            this.mainPage.Controls.Clear();
+            this.mainPage.Controls.Add(bra);
+            bra.Show();
+        }
+
+        private void BraManageClick2(object sender, EventArgs e)
+        {
+            BraManage bra = new BraManage();
+            bra.TopLevel = false;
+            bra.FormBorderStyle = FormBorderStyle.None;
+            bra.Dock = DockStyle.Fill;
+            this.mainPage.Controls.Clear();
+            this.mainPage.Controls.Add(bra);
+            bra.Show();
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.inv = new System.Windows.Forms.Panel();
+            this.bra = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.b2b_user_system = new System.Windows.Forms.Panel();
@@ -60,7 +60,7 @@
             this.mainPage = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.inv.SuspendLayout();
+            this.bra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.b2b_user_system.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -95,7 +95,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel6.Controls.Add(this.inv);
+            this.panel6.Controls.Add(this.bra);
             this.panel6.Controls.Add(this.b2b_user_system);
             this.panel6.Controls.Add(this.scan_data);
             this.panel6.Controls.Add(this.system_user);
@@ -110,17 +110,18 @@
             this.panel6.Size = new System.Drawing.Size(1389, 126);
             this.panel6.TabIndex = 19;
             // 
-            // inv
+            // bra
             // 
-            this.inv.Controls.Add(this.pictureBox4);
-            this.inv.Controls.Add(this.label15);
-            this.inv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.inv.Location = new System.Drawing.Point(356, 61);
-            this.inv.Name = "inv";
-            this.inv.Size = new System.Drawing.Size(182, 34);
-            this.inv.TabIndex = 8;
-            this.inv.MouseLeave += new System.EventHandler(this.inv_Pannel_Leave);
-            this.inv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Move);
+            this.bra.Controls.Add(this.pictureBox4);
+            this.bra.Controls.Add(this.label15);
+            this.bra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bra.Location = new System.Drawing.Point(356, 61);
+            this.bra.Name = "bra";
+            this.bra.Size = new System.Drawing.Size(182, 34);
+            this.bra.TabIndex = 8;
+            this.bra.Click += new System.EventHandler(this.BraManageClick);
+            this.bra.MouseLeave += new System.EventHandler(this.inv_Pannel_Leave);
+            this.bra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pannel_Move);
             // 
             // pictureBox4
             // 
@@ -132,6 +133,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.BraManageClick2);
             this.pictureBox4.MouseLeave += new System.EventHandler(this.inv_Pic_Leave);
             this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inv_Pic_Move);
             // 
@@ -140,9 +142,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(37, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 12);
+            this.label15.Size = new System.Drawing.Size(69, 12);
             this.label15.TabIndex = 3;
-            this.label15.Text = "운송장 ";
+            this.label15.Text = "영업소 관리";
             // 
             // b2b_user_system
             // 
@@ -445,6 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1413, 861);
             this.Controls.Add(this.mainPage);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -452,8 +455,8 @@
             this.Text = "Form1";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.inv.ResumeLayout(false);
-            this.inv.PerformLayout();
+            this.bra.ResumeLayout(false);
+            this.bra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.b2b_user_system.ResumeLayout(false);
             this.b2b_user_system.PerformLayout();
@@ -487,7 +490,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel inv;
+        private System.Windows.Forms.Panel bra;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel b2b_user_system;
