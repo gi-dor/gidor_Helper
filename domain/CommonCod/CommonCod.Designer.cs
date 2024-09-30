@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.cod_dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.COD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_CONT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_SLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.END_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodeManageButton = new System.Windows.Forms.Button();
             this.count_value = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Label();
@@ -53,14 +61,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.COD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_CONT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_SLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.END_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRS_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cod_dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,13 +85,61 @@
             this.cod_dataGridView1.Name = "cod_dataGridView1";
             this.cod_dataGridView1.ReadOnly = true;
             this.cod_dataGridView1.RowTemplate.Height = 23;
-            this.cod_dataGridView1.Size = new System.Drawing.Size(963, 478);
+            this.cod_dataGridView1.Size = new System.Drawing.Size(1073, 478);
             this.cod_dataGridView1.TabIndex = 3;
             this.cod_dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Row_Click_Detail);
             // 
+            // COD
+            // 
+            this.COD.HeaderText = "COD";
+            this.COD.Name = "COD";
+            this.COD.ReadOnly = true;
+            // 
+            // COD_CONT
+            // 
+            this.COD_CONT.HeaderText = "COD_CONT";
+            this.COD_CONT.Name = "COD_CONT";
+            this.COD_CONT.ReadOnly = true;
+            // 
+            // COD_SLT
+            // 
+            this.COD_SLT.HeaderText = "COD_SLT";
+            this.COD_SLT.Name = "COD_SLT";
+            this.COD_SLT.ReadOnly = true;
+            // 
+            // CREATED_DATE
+            // 
+            this.CREATED_DATE.HeaderText = "CRE_DATE";
+            this.CREATED_DATE.Name = "CREATED_DATE";
+            this.CREATED_DATE.ReadOnly = true;
+            // 
+            // END_DATE
+            // 
+            this.END_DATE.HeaderText = "END_DATE";
+            this.END_DATE.Name = "END_DATE";
+            this.END_DATE.ReadOnly = true;
+            // 
+            // TRS_ID
+            // 
+            this.TRS_ID.HeaderText = "TRS_ID";
+            this.TRS_ID.Name = "TRS_ID";
+            this.TRS_ID.ReadOnly = true;
+            // 
+            // TRS_NAME
+            // 
+            this.TRS_NAME.HeaderText = "TRS_NAME";
+            this.TRS_NAME.Name = "TRS_NAME";
+            this.TRS_NAME.ReadOnly = true;
+            // 
+            // TRS_DATE
+            // 
+            this.TRS_DATE.HeaderText = "TRS_DATE";
+            this.TRS_DATE.Name = "TRS_DATE";
+            this.TRS_DATE.ReadOnly = true;
+            // 
             // CodeManageButton
             // 
-            this.CodeManageButton.Location = new System.Drawing.Point(1008, 43);
+            this.CodeManageButton.Location = new System.Drawing.Point(1118, 43);
             this.CodeManageButton.Name = "CodeManageButton";
             this.CodeManageButton.Size = new System.Drawing.Size(149, 44);
             this.CodeManageButton.TabIndex = 4;
@@ -102,7 +150,7 @@
             // count_value
             // 
             this.count_value.AutoSize = true;
-            this.count_value.Location = new System.Drawing.Point(1089, 198);
+            this.count_value.Location = new System.Drawing.Point(1199, 198);
             this.count_value.Name = "count_value";
             this.count_value.Size = new System.Drawing.Size(61, 12);
             this.count_value.TabIndex = 9;
@@ -111,7 +159,7 @@
             // count
             // 
             this.count.AutoSize = true;
-            this.count.Location = new System.Drawing.Point(1006, 198);
+            this.count.Location = new System.Drawing.Point(1116, 198);
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(81, 12);
             this.count.TabIndex = 8;
@@ -128,7 +176,7 @@
             this.panel1.Controls.Add(this.생성일자);
             this.panel1.Controls.Add(this.코드내용);
             this.panel1.Controls.Add(this.코드);
-            this.panel1.Location = new System.Drawing.Point(991, 213);
+            this.panel1.Location = new System.Drawing.Point(1101, 213);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 260);
             this.panel1.TabIndex = 10;
@@ -223,7 +271,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(1, 497);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(963, 149);
+            this.panel2.Size = new System.Drawing.Size(1073, 149);
             this.panel2.TabIndex = 11;
             // 
             // endDate_textBox
@@ -317,59 +365,11 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "코드";
             // 
-            // COD
-            // 
-            this.COD.HeaderText = "COD";
-            this.COD.Name = "COD";
-            this.COD.ReadOnly = true;
-            // 
-            // COD_CONT
-            // 
-            this.COD_CONT.HeaderText = "COD_CONT";
-            this.COD_CONT.Name = "COD_CONT";
-            this.COD_CONT.ReadOnly = true;
-            // 
-            // COD_SLT
-            // 
-            this.COD_SLT.HeaderText = "COD_SLT";
-            this.COD_SLT.Name = "COD_SLT";
-            this.COD_SLT.ReadOnly = true;
-            // 
-            // CREATED_DATE
-            // 
-            this.CREATED_DATE.HeaderText = "CRE_DATE";
-            this.CREATED_DATE.Name = "CREATED_DATE";
-            this.CREATED_DATE.ReadOnly = true;
-            // 
-            // END_DATE
-            // 
-            this.END_DATE.HeaderText = "END_DATE";
-            this.END_DATE.Name = "END_DATE";
-            this.END_DATE.ReadOnly = true;
-            // 
-            // TRS_ID
-            // 
-            this.TRS_ID.HeaderText = "TRS_ID";
-            this.TRS_ID.Name = "TRS_ID";
-            this.TRS_ID.ReadOnly = true;
-            // 
-            // TRS_NAME
-            // 
-            this.TRS_NAME.HeaderText = "TRS_NAME";
-            this.TRS_NAME.Name = "TRS_NAME";
-            this.TRS_NAME.ReadOnly = true;
-            // 
-            // TRS_DATE
-            // 
-            this.TRS_DATE.HeaderText = "TRS_DATE";
-            this.TRS_DATE.Name = "TRS_DATE";
-            this.TRS_DATE.ReadOnly = true;
-            // 
             // CommonCod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 671);
+            this.ClientSize = new System.Drawing.Size(1307, 681);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.count_value);
