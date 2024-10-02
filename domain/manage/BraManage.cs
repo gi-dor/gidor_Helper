@@ -94,6 +94,13 @@ namespace gidor_Helper.domain.manage
                         
                     }
 
+                    QueryUsing.ComboTest(sqlQuery운영구분, 운영구분_combo, "운영구분", conn);
+                    QueryUsing.ComboTest(sqlQuery점포구분, 점포구분_combo, "점포구분", conn);
+                    QueryUsing.ComboTest(sqlQuery집배구분, 집배구분_combo, "집/배 구분", conn);
+                    QueryUsing.ComboTest(sqlQuery권역구분, 권역구분_combo, "권역구분", conn);
+                    QueryUsing.ComboTest(sqlQuery직영비직영구분, 직영구분_combo, "직영/비직영 구분", conn);
+
+                    /*
                     using (SqlCommand cmd = new SqlCommand(sqlQuery운영구분, conn))
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -143,7 +150,7 @@ namespace gidor_Helper.domain.manage
                         }
                         reader.Close();
                     }
-
+                    */
 
                 }
             } catch(Exception ex)
