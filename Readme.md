@@ -102,17 +102,18 @@
 
 ###  운송장상태 페이지 조회 SQL 쿼리 성능,기능문제
 
-- 상황 
+1. 상황 
 
- MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 `ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
+- MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 `ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
  조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
-<img src ="image\스캔데이터_시간초과.jpg" alt="시간초과" width = "500">
+- <img src ="image\스캔데이터_시간초과.jpg" alt="시간초과" width = "500">
     
 
-- 문제점
+2. 문제점
 > SCANN_TIME 컬럼에 대해 인덱스가 없으며 회사내에 데이터베이스이기에 함부로 인덱스를 추가 할수 없는 상황
 
-- 해결
+
+3. 해결방법
 
 1. `SCANN_DATE DESC` 을 사용해 우선적으로 정렬후 C#의 DataView.Sort 메서드를 사용해 SCANN_TIME 기준으로 추가적인 정렬을 실행했습니다
 2. MSSQL에서 다룰수 없는 컬럼에 대한 데이터 정렬을 C# 코드에서 정렬하는 방법은 메모리에서 수행되는 정렬이기에 인덱스의 영향을 받지 않습니다
