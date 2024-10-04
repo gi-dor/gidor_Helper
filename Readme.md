@@ -102,11 +102,12 @@
 
 ###  운송장상태 페이지 조회 SQL 쿼리 성능,기능문제
 
+<img src ="image\스캔데이터_시간초과.jpg" alt="시간초과" width = "500">
+
 1. 상황 
 
-- MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 `ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
- 조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
-- <img src ="image\스캔데이터_시간초과.jpg" alt="시간초과" width = "500">
+- MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬 실패
+- `ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시 조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
     
 
 2. 문제점
