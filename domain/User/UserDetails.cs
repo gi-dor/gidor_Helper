@@ -26,7 +26,7 @@ namespace gidor_Helper
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     conn.Open();
                     MessageBox.Show("Success, DB 연결 되었습니다", "DB 연결 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -47,7 +47,7 @@ namespace gidor_Helper
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                using (SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect()))
                 {
                     String sqlQuery = "SELECT " +
                                         "DEPARTMENT_NO          , " +
@@ -99,7 +99,7 @@ namespace gidor_Helper
             {
                 try
                 {
-                    using(SqlConnection conn = new SqlConnection(DB_Connect.conStr)) {
+                    using(SqlConnection conn = new SqlConnection(DB_Info.Get91PortConnect())) {
 
                         String selectColumn = user_dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
 
