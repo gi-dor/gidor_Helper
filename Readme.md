@@ -98,15 +98,16 @@
 
 
 
-
 ## 📌 트러블슈팅<a name="트러블슈팅"></a>
 
 ###  운송장상태 페이지 조회 SQL 쿼리 성능,기능문제
 
 - 상황 
-> MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 
->`ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
-> 조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
+
+ MSSQL 데이터베이스에서 `A.SCANN_TIME` 컬럼에 인덱스가 존재하지 않아 해당 컬럼을 포함한 정렬인 `ORDER BY A.SCANN_DATE DESC , A.SCANN_TIME DESC`를 수행시
+ 조회 시간이 과도하게 증가해 시간 초과로인한 조회 기능 종료 
+<img src ="image\스캔데이터_시간초과.jpg" alt="시간초과" width = "500">
+    
 
 - 문제점
 > SCANN_TIME 컬럼에 대해 인덱스가 없으며 회사내에 데이터베이스이기에 함부로 인덱스를 추가 할수 없는 상황
