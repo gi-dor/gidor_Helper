@@ -52,10 +52,22 @@
 ## 💻 기능구현 <a name="기능-구현"></a>
 
 
-- 물류서비스 영업장 사용자 아이디 조회 , 부분조회
-- 공통코드 조회 , 부분조회 
-- 운송장 스캔 정보 조회 및 세부 정보 조회 , 수정 , 삭제 
+- 물류서비스 영업장
+  - 사용자 아이디 조회
+    - ID , PW , 사용자명 , 고객사 , 택배영업소 , 사용자권한 조회 
+  - 조건조회
+    - 거래처명 , 사용자명 , 사용자 ID , 택배영업소 검색 조회 
+- 공통코드 조회 , 부분조회
+    - 공통코드 , 코드내용 , 코드 구분 
+- 운송장 스캔 정보 및 상태페이지
+    - 송장 최신기준 5000건 전체 조회 
+    - 해당 송장 정보의 세부 정보 조회 
+    - 세부 송장 정보 수정 
+    - 송장 전체 삭제 
+    - 송장 상태별 삭제 - 집하 , 입고 , 출고 , 배송중 , 배송완료 분류
 - 영업소 관리 
+    - DB에서 가져온 데이터 comboBox에 담아 상세 정보 조회
+    - 전체조회 3개 방식으로 분류 전체영업소 , 실제운영하는 영업소 , 폐쇄된 영업소 
 
 
 <br>
@@ -67,7 +79,16 @@
 
 - 반복되어 사용되는 DB연결정보를 DB_Info 클래스를 생성해 해당 포트 연결에 맞게 DB설정 이후 메서드 호출로 사용했습니다
 - [ [코드](https://github.com/gi-dor/gidor_Helper/blob/5a8ba8978fb544ba4382134dede21e15ef41b6e7/Util/DB_Info.cs#L12-L34) ]
-	
+
+- 	
+### 반복 SQL 쿼리문 함수화
+
+- 기존 TEXT로 조건을 주어 조회한 방식을 `comboBox`에 담아 오면서 사용된 sqlQuery문이 반복되어 함수화를 실행
+- [ [함수화된 코드](https://github.com/gi-dor/gidor_Helper/blob/7d36d1790015308710f3b480143ab5d80a2578c9/Util/QueryUsing.cs#L40-L53) ]
+
+- [ [기존 코드](https://github.com/gi-dor/gidor_Helper/blob/7d36d1790015308710f3b480143ab5d80a2578c9/domain/manage/BraManage.cs#L104-L152)]
+- [ [변경 후 코드](https://github.com/gi-dor/gidor_Helper/blob/7d36d1790015308710f3b480143ab5d80a2578c9/domain/manage/BraManage.cs#L97-L101) ]
+
 
 ###  SQL 쿼리 구성 최적화
 
@@ -75,6 +96,7 @@
 - 여러 텍스트 박스 입력을 처리 할때 `Boolean` 변수에 담아 사용하여 코드의 가독성과 유지 보수성을 향상 시켰습니다
 - [ [변경전](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L286-L313) ]
 - [ [변경후](https://github.com/gi-dor/gidor_Helper/blob/b15e90c70c555c350960b9753b32e4d817a2e8ba/domain/User/IdManage.cs#L154-L222) ]
+
 
 
 
