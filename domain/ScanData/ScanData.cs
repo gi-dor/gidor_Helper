@@ -310,7 +310,7 @@ namespace gidor_Helper.domain.ScanData
                 // 선택된 행이 0보다 크다면 
                 if (ScanDataGridView2.SelectedRows.Count > 0 )
                 {
-                    using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                    using (SqlConnection conn = new SqlConnection(DB_Connect.getTestDB()))
                     {
                         conn.Open();
                         
@@ -386,7 +386,7 @@ namespace gidor_Helper.domain.ScanData
                 {
                     // SqlConnection을 관리하기 위한 using
                     // 명시적으로 open 호출한다 하지만 close는 호출할 필요없다 using() 에서 처리한다
-                    using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+                    using (SqlConnection conn = new SqlConnection(DB_Connect.getTestDB()))
                     {
 
                         conn.Open();
@@ -511,7 +511,7 @@ namespace gidor_Helper.domain.ScanData
                                 $" WHERE INV_NO = '{selectColumn}' " +
                                 $" ORDER BY SCANN_DATE , SCANN_TIME ASC"; 
 
-            using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+            using (SqlConnection conn = new SqlConnection(DB_Connect.getTestDB()))
             {
                 conn.Open();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
@@ -528,7 +528,7 @@ namespace gidor_Helper.domain.ScanData
         {
             String sqlQuery = $"SELECT * FROM LS101T0  ORDER BY SCANN_DATE , SCANN_TIME ASC";
 
-            using (SqlConnection conn = new SqlConnection(DB_Connect.conStr))
+            using (SqlConnection conn = new SqlConnection(DB_Connect.getTestDB()))
             {
                 conn.Open();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, conn);
