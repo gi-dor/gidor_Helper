@@ -175,5 +175,5 @@ String sqlQuery = "SELECT top 100000 " +
      - winform 으로 만든 컬럼들을 지우고 DB데이터를 삽입
      - 사용자는 조회버튼 이전단계에서 컬럼명을 볼수있으며 조회버튼 실행 후에도 중복된 컬럼없이 데이터를 볼수 있다
 
-<img src="image/공통코드.jpg" alt="공통코드" width="600">
+       <img src="image/공통코드.jpg" alt="공통코드" width="600">
 
