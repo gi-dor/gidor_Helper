@@ -41,8 +41,8 @@
 | 분류       | 기술명                                                   |
 |----------|------------------------------------------------------------|
 | BackEnd  | C#  ,   .NET Framework                                        |
-| FrontEnd | WinForms                                                   |
-| DataBase | MSSQL                                                      |
+| FrontEnd | Windows Forms (WinForms)                                                   |
+| DataBase | Microsoft SQL Server (MSSQL)                                                    |
 | Version Control    | GitHub                                           |
 | Tools    |  Visual Studio                                             |
 
@@ -189,13 +189,13 @@ String sqlQuery = "SELECT top 100000 " +
 
      - 사용자 입장으로서 최악의 선택 , 조회버튼을 누르기 전까지 빈 흰색 화면만 보이기에 적절치 않다
        <br><br>
-     <img src="image/컬럼삭제.png" alt="컬럼삭제에러" width = "600">
+    <img src="image/컬럼삭제.png" alt="컬럼삭제에러" width = "600">
 
 
     2 ) dataGrideView에 컬럼 Clear() 메서드 사용
 
      - winform 에서 속성으로 만든 컬럼들을 지우고 DB에 존재하는 데이터를 삽입
      - 사용자는 조회버튼 이전단계에서 컬럼명을 볼수있으며 조회버튼 실행 후에도 중복된 컬럼없이 데이터를 볼수 있다
-
-       <img src="image/공통코드.jpg" alt="공통코드" width="600">
+     <br><br>
+      <img src="image/공통코드.jpg" alt="공통코드" width="600">
 
